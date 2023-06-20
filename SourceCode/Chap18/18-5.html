@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $(":header").css("background-color", "red");
+
+            function aniDiv() {
+                $("#div1").fadeToggle("slow", aniDiv); // fadeToggle() 메서드는 선택된 요소(확장집합)에 'fade in(점점 더 또렷해짐)' 효과와 'fade out(점점 더 흐려짐)' 효과를 토글하는 메서드로서 '04. 효과' 절에서 자세히 다룬다. 참고로 여기서 토글(toggle)이란 두 가지 상태를 교대로 변경 시키는 행위를 말한다.
+            }
+            aniDiv(); // 이 함수를 호출하면 <div id="div1"> 요소가 나타났다 사라졌다를 반복하면서 깜빡깜빡 거린다.
+            $("#button1").click(function () {
+                $("div:animated").css("background-color", "aqua");
+            })
+
+            $("#text1").focus();
+            $("input:focus").css("background-color", "lime");
+
+            $("#btnRoot").click(function () {
+                $(":root").css("background-color", "gray");
+            });
+
+            $("p:lang(ko)").css("background-color", "brown");
+
+            $("#ul1 > li:first").css("background-color", "yellow");
+            $("#ul1 > li:last").css("background-color", "fuchsia");
+
+            $("#ul2 > li:even").css("background-color", "orange");
+            $("#ul2 > li:odd").css("background-color", "silver");
+
+            $("#ul3 > li:eq(1)").css("background-color", "yellow");
+            $("#ul4 > li:gt(1)").css("background-color", "yellow");
+            $("#ul5 > li:lt(1)").css("background-color", "yellow");
+            $("#table1 td:not(:empty)").css("background-color", "yellow"); // :empty 선택자는 내용이 비어있는 모든 요소를 지칭하는 선택자로서 '내용 필터 선택자(content selector)' 항목에서 다시 다룬다.
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <h1>h1</h1>
+    <h2>h2</h2>
+
+    <div id="div1" style="background-color: green">div id="div1"</div>
+    <input type="button" id="button1" value="애니메이션이 적용되어 있는 요소의 색깔 변경" />
+    <br /><br />
+
+    <input type="text" id="text1" />
+    <br /><br />
+
+    <input type="button" value="html 요소 배경색 변경" id="btnRoot" />
+
+    <p>Hi there!</p>
+    <p lang="ko">안녕!</p>
+
+    <ul id="ul1">
+        <li>item 0</li>
+        <li>item 1</li>
+        <li>item 2</li>
+    </ul>
+
+    <ul id="ul2">
+        <li>item 0</li> <!-- 요소의 인덱스는 0부터 시작한다. 맨 앞에 있는 <li>item0</li> 요소의 인덱스는 0이므로 짝수(even) 인덱스이다. -->
+        <li>item 1</li> <!-- <li>item1</li> 요소의 인덱스는 1이므로 홀수(odd) 인덱스이다. -->
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <ul id="ul3">
+        <li>item 0</li>
+        <li>item 1</li>
+        <li>item 2</li>
+    </ul>
+
+    <ul id="ul4">
+        <li>item 0</li>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <ul id="ul5">
+        <li>item 0</li>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <table id="table1" border="1">
+        <tr>
+            <th>물품</th>
+            <th>가격</th>
+            <th>재고</th>
+        </tr>
+        <tr>
+            <td>마우스</td>
+            <td>10,000원</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>키보드</td>
+            <td></td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>USB</td>
+            <td>20,000</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,132 @@
+/********** INSERT 문 **********/
+INSERT INTO Member(UserID, Password, Name, Phone)
+VALUES('aaaa', '1111', '홍길동', '010-111-1111')
+
+INSERT INTO Member(UserID, Password, Name, Phone)
+VALUES('bbbb', '2222', '아무개', '010-222-2222')
+
+
+
+/********** SELECT 문 **********/
+SELECT * FROM Member
+
+SELECT UserID, Password FROM Member
+
+SELECT * FROM Member
+WHERE UserID = 'aaaa'
+
+SELECT * FROM Member
+ORDER BY UserID DESC
+
+
+
+/********** UPDATE 문 **********/
+UPDATE Member
+SET Phone = '010-333-3333'
+WHERE UserID = 'aaaa'
+
+
+
+/********** DELETE 문 **********/
+DELETE FROM Member WHERE UserID = 'aaaa'
+
+
+
+/********** 관계 설정 **********/
+DELETE FROM Member
+
+
+INSERT INTO Member(UserID, Password, Name, Phone)
+VALUES('aaaa', '1111', '홍길동', '010-111-1111')
+
+INSERT INTO Member(UserID, Password, Name, Phone)
+VALUES('bbbb', '2222', '아무개', '010-222-2222')
+
+INSERT INTO Member(UserID, Password, Name, Phone)
+VALUES('cccc', '3333', '김회원', '010-333-3333')
+
+
+INSERT INTO Cart(UserID, ItemName, Qty, Price)
+VALUES('aaaa', '우유', 2, 2200)
+
+INSERT INTO Cart(UserID, ItemName, Qty, Price)
+VALUES('aaaa', '라면', 3, 800)
+
+INSERT INTO Cart(UserID, ItemName, Qty, Price)
+VALUES('bbbb', '현미(3KG)', 1, 9000)
+
+
+INSERT INTO Cart(UserID, ItemName, Qty, Price)
+VALUES('zzzz', '계란', 1, 3000)
+
+
+
+/********** JOIN 문 **********/
+SELECT M.UserID, M.Name, M.Phone, C.ItemName, C.Qty, C.Price
+FROM Member M INNER JOIN Cart C
+ON M.UserID = C.UserID
+
+SELECT M.UserID, M.Name, M.Phone, C.ItemName, C.Qty, C.Price
+FROM Member M LEFT OUTER JOIN Cart C
+ON M.UserID = C.UserID
+
+
+
+/********** 저장 프로시저 **********/
+CREATE PROCEDURE usp_SelectMemberByUserID
+	@UserID varchar(30)
+AS
+BEGIN
+	SELECT UserID, Password, Name, Phone
+	FROM Member
+	WHERE UserID = @UserID
+END
+
+
+EXEC usp_SelectMemberByUserID 'aaaa'
+
+
+USE [MyDB]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_SelectMemberByUserID]    Script Date: 10/12/2014 17:34:54 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[usp_SelectMemberByUserID]
+	@UserID varchar(30)
+AS
+BEGIN
+	SELECT M.UserID, M.Name, M.Phone, C.ItemName, C.Qty, C.Price
+	FROM Member M INNER JOIN Cart C
+	ON M.UserID = C.UserID
+	WHERE M.UserID = @UserID
+END
+
+
+
+/********** 트랜잭션 **********/ 
+CREATE PROCEDURE usp_InsertMemberAndCart
+AS
+BEGIN TRY
+	BEGIN TRANSACTION -- 트랜잭션을 시작한다.
+	
+	INSERT INTO Member(UserID, Password, Name, Phone)
+	VALUES('xxxx', '0000', 'xxxx', '000-000-000')
+	
+	INSERT INTO Cart(UserID, ItemName, Qty, Price)
+	VALUES('yyyy', '생수', 6, 5000)
+
+	-- 만약 코드가 여기까지 진행되어 왔다면 모든 프로세스가 성공적이라는 뜻이다.
+	COMMIT -- 트랜잭션에 포함되어 있는 모든 프로세스를 그대로 적용한다.
+END TRY
+
+BEGIN CATCH -- CATCH 블록은 TRY 블록에서 발생한 오류를 캐치한다.
+	IF (@@TRANCOUNT > 0) -- 트랜잭션이 존재한다면
+		ROLLBACK -- 트랜잭션을 취소하여 모든 프로세스를 이전 상태로 되돌린다.
+		
+	-- 아래의 구문은 발생한 오류와 관련된 정보를 생성하고 등록하는 구문이다.
+	DECLARE @ErrorMsg nvarchar(4000), @ErrorSeverity int
+	SELECT @ErrorMsg = ERROR_MESSAGE(), @ErrorSeverity = ERROR_SEVERITY()
+	RAISERROR(@ErrorMsg, @ErrorSeverity, 1)
+END CATCH

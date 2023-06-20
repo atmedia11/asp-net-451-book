@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+    /* <![CDATA[ */
+        p {
+            padding: 5px;
+        }
+
+        .inner {
+            border: 2px solid black;
+        }
+
+        .wrap {
+            border: 2px dashed red;
+        }
+
+        .wrapAll {
+            border: 2px dotted green;
+        }
+
+        .wrapInner {
+            border: 2px double blue;
+        }
+    /* ]]> */
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        var count = 0;
+        function AddNewContent(methodType) {
+            count++;
+            switch (methodType) {
+                case "append":
+                    $("#p1").append(" <b>내용" + count + "</b>.");
+                    break;
+                case "prepend":
+                    $("#p1").prepend(" <b>내용" + count + "</b>.");
+                    break;
+                case "after":
+                    $("#p1").after(" <b>내용" + count + "</b>.");
+                    break;
+                case "before":
+                    $("#p1").before(" <b>내용" + count + "</b>.");
+                    break;
+            }
+        }
+
+        $(document).ready(function () {
+            // append(), prepend(), after(), before()
+            $("#btnRestore1").click(function () {
+                $("#myDiv1").html("<p id='p1' class='inner'>이것은 원본 내용입니다.</p>");
+                count = 0;
+            });
+            $("#btnAppend").click(function () {
+                AddNewContent("append");
+            });
+            $("#btnPrepend").click(function () {
+                AddNewContent("prepend");
+            });
+            $("#btnAfter").click(function () {
+                AddNewContent("after");
+            });
+            $("#btnBefore").click(function () {
+                AddNewContent("before");
+            });
+
+
+            // appendTo(), prependTo(), wrap(), wrapAll(), wrapInner(), unwrap(), remove(), empty()
+            $("#btnRestore2").click(function () {
+                $("#myDiv2").html("<p class='inner'>첫 번째 내용.</p> <p class='inner'>두 번째 내용.</p>");
+            });
+            $("#btnAppendTo").click(function () {
+                $("<b>appendTo.</b>").appendTo("#myDiv2 .inner"); // $() 함수의 인수로 요소가 포함되어 있는 문자열을 전달하면 해당 요소가 생성된다. 즉, $("<p>appendTo.</p>") 구문은 <p>appendTo.</p> 요소를 생성한 후 이 요소를 포함하는 확장집합을 반환한다.
+            });
+            $("#btnPrependTo").click(function () {
+                $("<b>prependTo.</b>").prependTo("#myDiv2 .inner");
+            });
+            $("#btnInsertAfter").click(function () {
+                $("<b>insertAfter.</b>").insertAfter("#myDiv2 .inner");
+            });
+            $("#btnInsertBefore").click(function () {
+                $("<b>insertBefore.</b>").insertBefore("#myDiv2 .inner");
+            });
+            $("#btnWrap").click(function () {
+                $("#myDiv2 .inner").wrap("<p class='wrap'></p>");
+            });
+            $("#btnWrapInner").click(function () {
+                $("#myDiv2 .inner").wrapInner("<p class='wrapInner'></p>");
+            });
+            $("#btnWrapAll").click(function () {
+                $("#myDiv2 .inner").wrapAll("<p class='wrapAll'></p>");
+            });
+            $("#btnUnwrap").click(function () {
+                var innerP = $("#myDiv2 .inner"); // 동일한 확장집합이 소스 코드에서 여러 번 사용된다면 해당 확장집합을 변수에 담아서 사용하는 것이 더 효율적이다.
+                if (innerP.parent().is("p")) { // parent() 메서드는 선택된 요소 바로(direct) 상위에 있는 부모 요소(확장집합)를 반환하며, is() 메서드는 선택된 요소가 매개변수로 지정한 '선택자', '요소', '확장집합' 등과 적어도 하나 이상 매칭되는 부분이 있다면 true를 반환하고 그렇지 않으면 false를 반환한다. 즉, if(innerP.parent().is("p")) 구문의 뜻은 innerP의 바로 상위에 있는 부모 요소가 <p> 요소인지 아닌지를 판단하는 구문이다. 참고로 parent() 메서드와 is() 메서드는 'DOM 탐색' 항에서 다시 다룬다.
+                    innerP.unwrap(); // innerP 바로 상위에 있는 부모 요소를 삭제한다.
+                }
+            });
+            $("#btnRemove").click(function () {
+                $("#myDiv2 .inner").remove();
+            });
+            $("#btnEmpty").click(function () {
+                $("#myDiv2 .inner").empty();
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" id="btnRestore1" value="초기화" />
+        <input type="button" id="btnAppend" value="append()" />
+        <input type="button" id="btnPrepend" value="prepend()" />
+        <input type="button" id="btnAfter" value="after()" />
+        <input type="button" id="btnBefore" value="before()" />
+        <div id="myDiv1">
+            <p id="p1" class="inner">이것은 원본 내용입니다.</p>
+        </div>
+    </div>
+    <br /><br />
+    <div>
+        <input type="button" id="btnRestore2" value="초기화" />
+        <input type="button" id="btnAppendTo" value="appendTo()" />
+        <input type="button" id="btnPrependTo" value="prependTo()" />
+        <input type="button" id="btnInsertAfter" value="insertAfter()" />
+        <input type="button" id="btnInsertBefore" value="insertBefore()" />
+        <input type="button" id="btnWrap" value="wrap()" />
+        <input type="button" id="btnWrapInner" value="wrapInner()" />
+        <input type="button" id="btnWrapAll" value="wrapAll()" />
+        <input type="button" id="btnUnwrap" value="unwrap()" />
+        <input type="button" id="btnRemove" value="remove()" />
+        <input type="button" id="btnEmpty" value="empty()" />
+        <div id="myDiv2">
+            <p class="inner">첫 번째 내용.</p>
+            <p class="inner">두 번째 내용.</p>
+        </div>
+    </div>
+</body>
+</html>

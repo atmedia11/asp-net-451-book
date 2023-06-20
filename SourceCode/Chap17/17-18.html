@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+    //<![CDATA[
+        function car(type, color) {
+            this.type = type;
+            this.color = color;
+
+            this.changeColor = changeColor;
+            function changeColor(color) {
+                this.color = color;
+            }
+        }
+
+        var myCar = new car("쏘나타", "Black");
+        document.write("type = " + myCar.type + ", color = " + myCar.color + "<br />");
+        myCar.changeColor("White");
+        document.write("type = " + myCar.type + ", color = " + myCar.color + "<br /><br />");
+
+        for (var x in myCar) {
+            document.write(x + " = " + myCar[x] + "<br />");
+        }
+    //]]>
+    </script>
+</body>
+</html>

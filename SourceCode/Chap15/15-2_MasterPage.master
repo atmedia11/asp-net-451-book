@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" %>
+
+<%@ Register src="LoginControl.ascx" tagname="LoginControl" tagprefix="uc1" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+        <div id="header">
+            <a runat="server" href="~/15-2_Default.aspx">메인</a>
+            <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/15-2_Default.aspx" />
+        </div>
+        <div id="left">
+            <asp:LoginView ID="LoginView1" runat="server">
+                <AnonymousTemplate>
+                    <uc1:LoginControl ID="LoginControl1" runat="server" />                    
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                    <asp:LoginName ID="LoginName1" runat="server" FormatString="{0} 님 반갑습니다!!!" /><br />
+                    <a runat="server" href="~/Secured/15-2_ChangePassword.aspx">암호수정</a><br />
+                    <a runat="server" href="~/Secured/15-2_UpdateUserInfo.aspx">정보수정</a><br />
+                    <a runat="server" href="~/Secured/15-2_Withdrawal.aspx">탈퇴</a>
+                </LoggedInTemplate>
+            </asp:LoginView>
+        </div>
+        <div id="breadcrumbs">
+        </div>
+        <div id="content">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="footer">Copyright</div>
+    </div>
+    </form>
+</body>
+</html>

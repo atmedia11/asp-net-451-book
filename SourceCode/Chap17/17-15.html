@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+    //<![CDATA[
+        document.write("<h3>break문</h3>");
+        for (var i = 0; i < 10; i++) {
+            if (i == 6) {
+                break;
+            }
+            document.write("i = " + i + "<br />");
+        }
+
+        document.write("<h3>continue문</h3>");
+        for (var i = 0; i < 10; i++) {
+            if (i == 6) {
+                continue;
+            }
+            document.write("i = " + i + "<br />");
+        }
+    //]]>
+    </script>
+</body>
+</html>

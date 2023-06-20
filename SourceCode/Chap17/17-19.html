@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+    //<![CDATA[
+        // Number 객체
+        document.write("<h3>Number 객체</h3>");
+        var num1 = 10; // Number 데이터 형식
+        var num2 = new Number(10); // Number 객체
+        document.write(typeof num1 + ", " + typeof num2 + "<br />");    // typeof 연산자는 피연산자의 형식(type)을 반환한다.
+        document.write((num1 == num2) + "<br />");  // true 반환. 숫자 10으로서 동등하다.
+        document.write((num1 === num2) + "<br />");// false 반환. num1은 Number 데이터 형식이고 num2는 Number 객체(object)이므로 일치하지 않는다.
+        document.write((num1 + num2) + "<br />");
+        document.write(num1.toString() + num2.toString());  // .toString()은 Number 객체에서 제공하는 메서드로서 숫자를 문자열로 변환한다.
+                                                            // num1 변수는 Number 객체가 아니라 Number 데이터 형식임에도 불구하고 
+                                                            // Number 객체에서 제공하는 toString() 메서드를 사용하고 있는데
+                                                            // 이것은 Number 데이터 형식의 변수가 Number 객체의 속성 또는 메서드를 사용하려고 할 때
+                                                            // JavaScript는 임시적으로 Number 데이터 형식의 변수를 Number 객체로 변환하기 때문이다.
+                                                            // 그리고 이러한 규칙은 아래에 나오는 String, Boolean 데이터 형식에도 그대로 적용된다.
+
+        /*
+         * Number 객체에서는 toString() 메서드 외에도 다양한 메서드들을 제공한다.
+         * 하지만 이 예제에서 모든 속성과 메서드를 소개하는 데에는 한계가 있으므로 
+         * Number, String, Boolean, Array, Date, Math, RegExp 등 모든 내장 객체에서 제공하는 속성과 메서드는
+         * http://www.w3schools.com/jsref/default.asp 사이트에서 'JavaScript Reference' 부분을 참고하기 바란다.
+         * 참고로 http://www.w3schools.com 사이트는 웹 개발과 관련된 다양한 강좌와 레퍼런스를 제공하는 매우 유용한 사이트이다.
+        */
+
+
+        // String 객체
+        document.write("<h3>String 객체</h3>");
+        var str1 = "Hello world!"; // String 데이터 형식
+        var str2 = new String("Hello world!"); // String 객체
+        document.write(typeof str1 + ", " + typeof str2 + "<br />");
+        document.write((str1 == str2) + "<br />");  // true 반환.
+        document.write((str1 === str2) + "<br />"); // false 반환.
+        document.write("str2 = " + str2 + "<br />");
+        document.write("str2.length = " + str2.length + "<br />"); // String 객체의 length 속성은 문자열의 길이를 반환하는 속성이다.
+        document.write("str2.indexOf(\"world!\") = " + str2.indexOf("world!") + "<br />");  // String 객체의 indexOf() 메서드는 특정 문자열을 찾아 그 위치 인덱스를 반환하는 메서드이다.        
+        /*
+         * 참고로 바로 위의 구문에서 \"와 같이 사용된 \(backslash)는 특수 문자의 시작을 나타낸다.
+         * 문자열에서 사용할 수 있는 특수 문자에는 아래와 같은 것들이 있다.
+         * \' : 작은따옴표, \" : 큰따옴표, \\ : 백슬래시(backslash), \n : 한 줄 개행
+         * \r : 캐리지 리턴(carriage return), \t : 탭(tab), \b : 백스페이스(backspace), \f : 폼 피드(form feed)
+        */
+
+        document.write("str2.replace(\"world\", \"JavaScript\") = " + str2.replace("world", "JavaScript") + "<br />"); // String 객체의 replace() 메서드는 특정 문자열을 다른 문자열로 바꾸는 메서드이다.
+        document.write("str2.toUpperCase() = " + str2.toUpperCase() + ", " + "str2.toLowerCase() = " + str2.toLowerCase()); // String 객체의 toUpperCase()는 문자열을 대문자로 바꾸는 메서드이고 toLowerCase() 메서드는 문자열을 소문자로 바꾸는 메서드이다.
+
+        // Boolean 객체
+        document.write("<h3>Boolean 객체</h3>");
+        var b1 = new Boolean(0);
+        var b2 = new Boolean(-0);
+        var b3 = new Boolean("");
+        var b4 = new Boolean(false);
+        var b5 = new Boolean(null);
+        var b6 = new Boolean(undefined);
+        var b7 = new Boolean(NaN);
+        document.write(b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6 + " " + b7 + "<br />"); // Boolean 객체 생성 시 Boolean() 생성자 함수에 0, -0, "", false, null, undefined, NaN 값을 인수로 전달하면 해당 객체는 false 값을 가진다.
+        var b8 = new Boolean(1);
+        var b9 = new Boolean(-10);
+        var b10 = new Boolean("Hello world!");
+        var b11 = new Boolean("false");
+        document.write(b8 + " " + b9 + " " + b10 + " " + b11); // Boolean 객체 생성 시 Boolean() 생성자 함수에 0, -0, "", false, null, undefined, NaN 이외의 값을 인수로 전달하면 해당 객체는 true 값을 가진다. 심지어 "false" 문자열을 인수로 전달하더라도 true 값을 가진다.
+        
+
+        // Array 객체
+        document.write("<h3>Array 객체</h3>");
+        var ar1 = new Array(); // 1. Array() 생성자 함수를 사용하여 Array 객체를 만들 수 있다.
+        ar1[0] = "Banana";
+        ar1[1] = "Orange";
+        ar1[2] = "Apple";
+        var ar2 = new Array("Banana", "Orange", "Apple"); // 2. Array() 생성자 함수를 사용하여 Array 객체를 만들 때 인수를 전달하여 배열을 초기화할 수 있다.
+        var ar3 = ["Banana", "Orange", "Apple"]; // 3. Array 리터럴을 사용하여 Array 객체를 만들 수도 있다.
+        for (var i = 0; i < ar1.length; i++) { // Array 객체의 length 속성은 배열에 포함되어 있는 원소의 수를 반환한다.
+            document.write("ar1[" + i + "] = " + ar1[i] + "<br />");
+        }
+        /*
+         * Array 객체는 concat(), indexOf(), join(), reverse(), slice() 등 매우 다양한 메서드들을 제공해주므로 이들에 대한 자세한 설명은
+         * 위에서도 설명했듯이 http://www.w3schools.com/jsref/default.asp 사이트에서 'JavaScript Reference' 부분을 참고하기 바란다.
+        */
+
+
+        // Date 객체
+        document.write("<h3>Date 객체</h3>");        
+        var today = new Date(); // Date() 생성자 함수에 어떠한 인수도 전달하지 않으면 오늘 날짜로 Date 객체가 생성된다.
+        var d1 = new Date("January 1, 2014 13:00:00"); // 날짜를 나타내는 문자열을 인수로 전달하여 Date 객체를 생성할 수 있다.
+        var d2 = new Date(2020, 0, 1, 6, 10, 30, 9); // new Date(year, month, day, hours, minutes, seconds, milliseconds)와 같은 형식으로 인수를 전달하여 원하는 Date 객체를 생성할 수 있다.
+        function printDate(date) {
+            document.write(date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + ":" + date.getMilliseconds() + "<br />"); // Date 객체는 년, 월, 일, 시간, 분, 초, 밀리초를 반환하는 메서드를 제공한다. 참고로 월을 반환하는 getMonth() 메서드는 1월을 0, 2월을 1, ...., 12월을 11로 반환하므로 반환된 값에 1을 더해주었다.
+        }
+        printDate(today);
+        printDate(d1);
+        printDate(d2);
+        document.write(today.toString() + "<br />" + today.toDateString() + "<br />" + today.toLocaleDateString() + "<br />"); // Date 객체는 toString(), toDateString(), toLocaleDateString() 등의 메서드를 통해 다양한 형식으로 날짜를 출력할 수 있다.
+        document.write(d1 > today); // Date 객체는 비교 연산이 가능하다.
+
+
+        // Math 객체
+        document.write("<h3>Math 객체</h3>");
+        document.write("Math.PI = " + Math.PI + "<br />"); // 원주율 출력. 참고로 Math 객체에 있는 속성과 메서드는 정적 멤버이므로 Math 객체의 인스턴스를 생성하지 않고도 바로 참조할 수 있다.
+        document.write("Math.round(2.5) = " + Math.round(2.5) + "<br />");  // 3 출력. 반올림.
+        document.write("Math.floor(2.5) = " + Math.floor(2.5) + "<br />");  // 2 출력. 버림.
+        document.write("Math.ceil(2.3) = " + Math.ceil(2.3) + "<br />");    // 3 출력. 올림.
+        document.write("Math.min(10, 20) = " + Math.min(10, 20) + "<br />");// 10 출력. 작은 값 반환.
+        document.write("Math.max(10, 20) = " + Math.max(10, 20) + "<br />"); // 20 출력. 큰 값 반환.
+        var randomValue = Math.random(); // 0 ~ 1 사이의 난수(random number) 반환.
+        document.write("Math.random() = " + randomValue + "<br />");
+        document.write("Math.floor(Math.random() * 11) = " + Math.floor(randomValue * 11) + "<br />"); // floor() 메서드와 난수를 사용하여 0 ~ 10 사이의 정수 난수를 생성.
+
+
+        // RegExp 객체
+        document.write("<h3>RegExp 객체</h3>");
+        var str = "Hello World, hello JavaScript";
+        document.write("str = " + str + "<br />");
+
+        var patt1 = new RegExp("World"); // RegExp() 생성자 함수의 인수로 정규식 패턴 문자열("World")을 전달하고 있다.
+        document.write("RegExp(\"World\") : " + str.match(patt1) + "<br />"); // String 객체의 match() 메서드는 정규식 패턴을 인수로 받아서(여기서는 정규식 패턴을 가지고 있는 RegExp 객체를 인수로 받고 있다) 해당 정규식 패턴과 일치하는 문자열들의 집합을 Array 객체로 반환한다. 여기서는 str 변수에 "World" 문자열이 있으므로 "World" 문자열을 반환한다(엄밀히 말하면 "World" 문자열 원소 하나를 가지는 Array 객체를 반환한다. 참고로 원소가 하나인 Array 객체를 document.write() 메서드로 출력하면 해당 원소가 그냥 문자열로 출력된다).
+
+        var patt2 = new RegExp("world");
+        document.write("RegExp(\"world\") : " + str.match(patt2) + "<br />"); // 소문자로된 "world" 문자열은 str 변수에 없으므로 "world"를 찾을 수 없어 null을 반환한다.
+
+        var patt3 = new RegExp("world", "i"); // RegExp() 생성자 함수는 두 번째 인수로 '한정자(modifier)'를 전달받을 수 있는데 여기서는 한정자로 "i"를 전달받고 있다. 참고로 한정자 "i"의 뜻은 case-insensitive 즉, 대소문자를 구분하지 않겠다는 뜻이다.
+        document.write("RegExp(\"world\", \"i\") : " + str.match(patt3) + "<br />"); // 대소문자를 구분하지 않으므로 패턴 문자열은 "world"이지만 str에서 "World" 문자열을 찾을 수 있다.
+
+        var patt4 = new RegExp("Hello", "i");
+        document.write("RegExp(\"Hello\", \"i\") : " + str.match(patt4) + "<br />"); // RegExp 객체 생성 시 global을 의미하는 "g" 한정자를 인수로 전달하지 않으면 기본적으로 첫 번째 패턴 매칭 결과만을 반환한다. 즉, str 변수에서 대소문자를 구분하지 않으면 "Hello", "hello" 두 개의 문자열을 찾을 수 있는데 RegExp 객체 생성 시 "g" 한정자를 인수로 전달하지 않았으므로 첫 번째 "Hello" 문자열만 반환한다.
+
+        var patt5 = new RegExp("Hello", "ig");
+        document.write("RegExp(\"Hello\", \"ig\") : " + str.match(patt5) + "<br />"); // 여기서는 RegExp 객체를 생성할 때 "ig" 한정자를 인수로 전달하여 대소문자를 구분하지 않으면서 모든(global) 패턴 매칭을 하도록 지정했으므로 "Hello", "hello" 문자열을 모두 반환한다. 참고로 원소가 둘 이상인 Array 객체를 document.write() 메서드로 출력하면 원소들이 콤마(,)로 구분되어 출력된다.
+        var pattAr = str.match(patt5);
+        for (var i = 0; i < pattAr.length; i++) { // 여기서는 위의 패턴 매칭으로 반환된 Array 객체의 각 원소들을 for문을 사용하여 출력한다.
+            document.write(pattAr[i] + "<br />");
+        }
+
+        var patt6 = /Hello/ig; // 정규식 패턴은 RegExp 객체가 아닌 '정규식 리터럴'을 사용하여 지정할 수도 있다. 정규식 리터럴은 '/정규식패턴/한정자'와 같은 구조를 가진다. 즉, /Hello/ig 정규식 리터럴은 new RegExp("Hello", "ig") 객체와 동일한 정규식 패턴을 가진다.
+        document.write("/Hello/ig : " + str.match(patt6) + "<br />");
+
+        var patt7 = new RegExp("e");
+        document.write(patt7.test(str) + ", " + patt7.exec(str) + "<br />"); // RegExp 객체의 test() 메서드는 지정된 패턴 매칭이 있으면 true를 반환하고 그렇지 않으면 false를 반환한다. 그리고 RegExp 객체의 exec() 메서드는 지정된 패턴 매칭이 있으면 검색된 문자열을 반환하고 그렇지 않으면 null을 반환한다.
+
+        var patt8 = new RegExp("z");
+        document.write(patt8.test(str) + ", " + patt8.exec(str)); // str 변수에서 "z" 문자열은 없으므로 test() 메서드는 false를 반환하고 exec() 메서드는 null을 반환한다.
+    //]]>
+    </script>
+</body>
+</html>

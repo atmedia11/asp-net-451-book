@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnAnimate").click(function () {
+                $("div").animate({ height: "300px" }, 3000);
+                $("div").animate({ width: "300px" }, 3000);
+                $("div").queue(
+                    function () {
+                        $(this).css("background-color", "red");
+                        $(this).dequeue();
+                    }
+                ).delay(3000); // 3초간 지연. 참고로 jQuery에서는 메서드 체이닝(chaining)이 가능한데 예를 들어 $("div").slideUp(2000).delay(3000).slideDown(2000); 구문은 <div> 요소를 2초간 slide up -> 3초간 정지 -> 2초간 slide down하게 한다.
+                $("div").animate({ height: "100px" }, 3000);
+                $("div").animate({ width: "100px" }, 3000);
+            });
+
+            $("#btnReload").click(function () {
+                location.reload();
+            });
+
+            $("#btnClearQueue").click(function () {
+                $("div").clearQueue(); // clearQueue() 메서드는 선택된 요소의 큐에서 아직 실행되지 않은(뒤에 있는) 모든 함수(또는 애니메이션)를 제거한다. 단, 현재 실행되고 있는 함수(또는 애니메이션)는 제거하지 않는다.
+            });
+
+            $("#btnStop1").click(function () {
+                $("div").stop(); // stop() 메서드는 선택된 요소의 큐에서 현재 실행되고 있는 함수(또는 애니메이션)의 실행을 중지하고 바로 다음 순서에 있는 함수(또는 애니메이션)를 실행한다.
+            });
+
+            $("#btnStop2").click(function () {
+                $("div").stop(false, true); // true, false를 바꿔가면서 테스트 해보자. 참고로 stop(false, false) 메서드는 stop() 메서드와 동일하다.
+            });
+
+            $("#btnFinish").click(function () {
+                $("div").finish(); // finish() 메서드는 선택된 요소의 큐에서 현재 실행되고 있는 애니메이션의 실행을 중지 및 완료하고 남아 있는(뒤에 있는) 모든 애니메이션을 제거한다.
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    * stop() 메서드의 경우 stop(stopAll, goToEnd) 형식과 같이 두 개의 매개변수를 지정할 수 있다.<br />
+    * stopAll, goToEnd 매개변수는 모두 생략이 가능하다.<br />
+
+    <table border="1">
+        <tr style="background-color: silver;">
+            <th>매개변수</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td>stopAll</td>
+            <td>큐에 있는 모든 함수(또는 애니메이션)의 중지 여부를 지정한다.[true, false]</td>
+        </tr>
+        <tr>
+            <td>goToEnd</td>
+            <td>큐에서 현재 실행되고 있는 함수(또는 애니메이션)의 실행 완료 여부를 지정한다.[true, false]</td>
+        </tr>
+    </table>
+    <br />
+
+    <input type="button" id="btnAnimate" value="애니메이션 실행" />
+    <input type="button" id="btnReload" value="페이지 다시 로드" />
+    <br /><br />
+    <input type="button" id="btnClearQueue" value="clearQueue()" />
+    <input type="button" id="btnStop1" value="stop()" />
+    <input type="button" id="btnStop2" value="stop(stopAll, goToEnd)" />
+    <input type="button" id="btnFinish" value="finish()" />
+    <br /><br />
+    <div style="background-color: orange; width: 100px; height: 100px;">
+        이것은 테스트 문장입니다.
+    </div>
+</body>
+</html>

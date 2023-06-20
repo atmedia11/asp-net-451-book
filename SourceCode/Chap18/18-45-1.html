@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnRequest").click(function () {
+                $.get(
+                    "18-45-2.aspx",
+                    { userID: $("#userID").val() },
+                    function (responseData) {
+                        var obj = $.parseJSON(responseData); // $.parseJSON() 메서드는 매개변수로 지정한 JSON 문자열을 해석(parsing)하여 JavaScript 객체로 변환시켜주는 메서드이다. $() 함수 객체(jQuery() 함수 객체)에서 제공하는 다양한 메서드들은 http://api.jquery.com/category/utilities/ 페이지에서 참고하기 바란다.
+                        $("#lblUserName").html(obj.userName);
+                        $("#lblAge").html(obj.age);
+                    }
+                );
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <h3>$.get() 메서드와 JSON을 사용한 예제</h3>
+
+    <select id="userID">
+        <option>aaaa</option>
+        <option>bbbb</option>
+        <option>cccc</option>
+    </select>
+    <input type="button" id="btnRequest" value="조회" />
+    <br /><br />
+    사용자 이름 : <span id="lblUserName"></span><br />
+    나이 : <span id="lblAge"></span>
+</body>
+</html>

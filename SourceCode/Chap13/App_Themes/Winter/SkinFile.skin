@@ -1,0 +1,3 @@
+﻿<asp:TextBox runat="server" ForeColor="White" BackColor="Blue"/>
+<asp:Button runat="server" ForeColor="White" BackColor="Blue"/>
+<asp:Label runat="server" CssClass="note"></asp:Label>

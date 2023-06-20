@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        lblTime.Text = DateTime.Now.ToLongTimeString();
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <%--ScriptManager 컨트롤에 대한 자세한 설명은 http://msdn.microsoft.com/ko-kr/library/Bb398863(v=vs.100).aspx 페이지를 참고하자.--%>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <%--참조할 스크립트 선언--%>
+            </Scripts>
+            <Services>
+                <%--참조할 웹 서비스 선언--%>
+            </Services>
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <fieldset>
+                    <legend>UpdatePanel (마스터 페이지)</legend>
+                    웹 서버의 현재 시간 : <asp:Label ID="lblTime" runat="server"></asp:Label><br />
+                    <asp:Button ID="btnInner" runat="server" Text="내부 버튼" />
+                </fieldset>
+            </ContentTemplate>
+        </asp:UpdatePanel><br />
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

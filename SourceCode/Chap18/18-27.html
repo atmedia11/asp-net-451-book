@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnAnimate").click(function () {
+                $("div").animate({ height: "300px" }, 1000);
+                $("div").animate({ width: "300px" }, 1000);
+                $("div").animate({ height: "100px" }, 1000);
+                $("div").animate({ width: "100px" }, 1000);
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <input type="button" id="btnAnimate" value="애니메이션 실행" />
+    <div style="background-color: orange; width: 100px; height: 100px;">
+        이것은 테스트 문장입니다.
+    </div>
+</body>
+</html>

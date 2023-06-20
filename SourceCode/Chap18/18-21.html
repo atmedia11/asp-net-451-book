@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        var count = 0;
+
+        $(document).ready(function () {
+            $("#text1").keydown(function () {
+                $("#span1").text("keydown 이벤트 발생!!!");
+            });
+
+            $("#text1").keyup(function () {
+                $("#span1").text("keyup 이벤트 발생!!!");
+            });
+
+            $("#text1").keypress(function () {
+                $("#span2").text(++count);
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <input type="text" id="text1" />
+    <span id="span1"></span>
+    <br />
+    keypress 횟수 : <span id="span2"></span>
+</body>
+</html>

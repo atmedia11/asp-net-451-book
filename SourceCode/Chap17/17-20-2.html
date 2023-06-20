@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+    //<![CDATA[
+        function changeOpenersContents() {
+            if (window.opener) { // 현재의 Window를 열어준 부모 Window가 존재한다면(열려있다면)
+                window.opener.document.getElementById("spanForOpen").innerHTML = "열린 Window에서 수정한 문자열. " + (new Date()).toLocaleTimeString();
+                window.opener.focus();
+            } 
+        }
+    //]]>
+    </script>
+</head>
+<body>
+    <h3>새롭게 열린 Window</h3>
+    <input type="button" value="close() 메서드" onclick="window.close()" /><br />
+    <input type="button" value="opener 속성" onclick="changeOpenersContents()" /><br />
+    <input type="button" value="moveBy() 메서드" onclick="window.moveBy(100, 100)" /><br />
+    <input type="button" value="moveTo() 메서드" onclick="window.moveTo(100, 100)" /><br />
+</body>
+</html>

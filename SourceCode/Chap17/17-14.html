@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+    //<![CDATA[
+        document.write("<h3>for문</h3>");
+        for (var i = 1; i < 11; i++) {
+            document.write("i = " + i + "<br />");
+        }
+
+        document.write("<h3>while문</h3>");
+        var j = 0;
+        while (j < 5) {
+            document.write(j + "<br />");
+            j++; // 이 부분을 빠트리면 이 구문은 무한루프에 빠진다.
+        }
+
+        document.write("<h3>do~while문</h3>");
+        var k = 0;
+        do {
+            document.write(k + "<br />");
+            k++; // 이 부분을 빠트리면 이 구문은 무한루프에 빠진다.
+        } while (k < 5)
+    //]]>
+    </script>
+</body>
+</html>

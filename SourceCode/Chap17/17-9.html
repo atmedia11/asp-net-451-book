@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <h3>관계 연산자</h3>
+
+    <script>
+    //<![CDATA[
+        var a = 10, b = 20, c = 10;
+        var r;
+        document.write("a = " + a + ", b = " + b + ", c = " + c + "<br />");
+
+        r = (a == b);
+        document.write("a == b : " + r + "<br />");
+        r = (a != b);
+        document.write("a != b : " + r + "<br />");
+        r = (a > b);
+        document.write("a > b : " + r + "<br />");
+        r = (a < b);
+        document.write("a < b : " + r + "<br />");
+        r = (a >= c);
+        document.write("a >= c : " + r + "<br />");
+        r = (a <= c);
+        document.write("a <= c : " + r + "<br /><br />");
+
+        // == 연산자와 === 연산자에 대한 자세한 설명은 책에 있는 [알아두기]를 참고하기 바란다.
+        var x = 10, y = '10', z = true;        
+        document.write("x = " + x + ", y = '" + y + "', z = " + z + "<br />");
+
+        r = (x == y);
+        document.write("x == y : " + r + "<br />");
+        r = (z == 1);
+        document.write("z == 1 : " + r + "<br />");
+        r = (z == '1');
+        document.write("z == '1' : " + r + "<br />");
+        r = null == undefined;
+        document.write("null == undefined : " + r + "<br /><br />");
+
+        r = (x === y);
+        document.write("x === y : " + r + "<br />");
+        r = (z === 1);
+        document.write("z === 1 : " + r + "<br />");
+        r = (z === '1');
+        document.write("z === '1' : " + r + "<br />");
+        r = null === undefined;
+        document.write("null === undefined : " + r + "<br /><br />");
+    //]]>
+    </script>
+</body>
+</html>

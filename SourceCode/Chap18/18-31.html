@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnText1").click(function () {
+                alert($("a").text());
+            });
+
+            $("#btnHtml1").click(function () {
+                alert($("a").html());
+            });
+
+            $("#btnAttr1").click(function () {
+                alert($("a").attr("href"));
+            });
+
+            $("#btnVal1").click(function () {
+                alert($(":text").val());
+            });
+
+            $("#btnText2").click(function () {
+                $("#a1").text("jQuery.com");
+            });
+
+            $("#btnHtml2").click(function () {
+                $("#a1").html("<b>jQuery.com</b>");
+            });
+
+            $("#btnAttr2").click(function () {
+                $("#a2").attr("href", "http://www.w3schools.com");
+                alert("'jQuery.com 학습 페이지'의 링크가\n\n'http://www.w3schools.com'으로 변경되었습니다.");
+            });
+
+            $("#btnVal2").click(function () {
+                $("#txt1").val("아무개");
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <a id="a1" href="http://jquery.com/"><b>jQuery</b> 공식 사이트</a><br />
+    <a id="a2" href="http://learn.jquery.com/"><b>jQuery.com</b> 학습 페이지</a><br />
+    <a id="a3" href="http://www.w3schools.com/jquery/default.asp"><b>w3schools.com</b> 학습 페이지</a><br />
+    <input type="text" id="txt1" value="홍길동" /><br />
+    <input type="text" id="txt2" value="아무개" />
+
+    <br /><br />
+
+    참조:
+    <input type="button" id="btnText1" value="text()" />
+    <input type="button" id="btnHtml1" value="html()" />
+    <input type="button" id="btnAttr1" value="attr('href')" />
+    <input type="button" id="btnVal1" value="val()" />
+
+    <br /><br />
+
+    설정:
+    <input type="button" id="btnText2" value="text('jQuery.com')" />
+    <input type="button" id="btnHtml2" value="html('&lt;b&gt;jQuery.com&lt;/b&gt;')" />
+    <input type="button" id="btnAttr2" value="attr('href', 'http://www.w3schools.com')" />
+    <input type="button" id="btnVal2" value="val('아무개')" />
+</body>
+</html>

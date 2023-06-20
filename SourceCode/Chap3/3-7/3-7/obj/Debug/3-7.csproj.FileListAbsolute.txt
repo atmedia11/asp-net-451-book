@@ -1,0 +1,6 @@
+C:\SourceCode\Chap3\3-7\3-7\bin\Debug\3-7.exe.config
+C:\SourceCode\Chap3\3-7\3-7\bin\Debug\3-7.exe
+C:\SourceCode\Chap3\3-7\3-7\bin\Debug\3-7.pdb
+C:\SourceCode\Chap3\3-7\3-7\obj\Debug\3-7.csprojResolveAssemblyReference.cache
+C:\SourceCode\Chap3\3-7\3-7\obj\Debug\3-7.exe
+C:\SourceCode\Chap3\3-7\3-7\obj\Debug\3-7.pdb

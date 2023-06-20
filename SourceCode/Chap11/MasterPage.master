@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+    /* <![CDATA[ */
+        #container {
+            margin: 0px auto;
+            min-width: 780px;
+	        max-width: 1260px;
+            border: 1px solid gray;
+            line-height: 150%;
+        }
+
+        #header {
+            padding: 10px;
+            color: white;
+            background-color: Silver;
+        }        
+
+        #left {
+            float: left;
+            width: 160px;
+            margin: 0;
+            padding: 10px;
+        }
+
+        #breadcrumbs {
+            margin-left: 190px;
+            border-left: 1px solid gray;            
+            background-color: Menu;
+            padding: 10px;
+            text-align: right;
+        }
+
+        #content {
+            margin-left: 190px;
+            border-left: 1px solid gray;
+            padding: 10px;
+            min-height: 225px;
+        }
+
+        #footer {
+            padding: 10px;
+            color: white;
+            background-color: Silver;
+            clear: left;
+        }        
+    /* ]]> */
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div id="header">
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" StaticDisplayLevels="2">
+                    <DynamicMenuItemStyle HorizontalPadding="10px" />
+                    <StaticMenuItemStyle HorizontalPadding="10px" />
+                </asp:Menu>
+            </div>
+            <div id="left">
+                <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+                </asp:TreeView>
+            </div>
+            <div id="breadcrumbs">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="footer">Copyright</div>
+        </div>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+    </form>
+</body>
+</html>

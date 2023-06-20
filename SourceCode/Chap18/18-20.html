@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#text1").focus(function () {
+                $("#span1").text("focus 이벤트 발생!");
+            });
+            $("#text1").blur(function () {
+                $("#span1").text("blur 이벤트 발생!");
+            });
+            $("#button1").click(function () {
+                $("#text1").focus(); // focus() 메서드에 인수(이벤트 처리기 즉, 함수)를 전달하지 않으면 선택된 요소(확장집합)에 focus 이벤트를 발생시킨다.
+            });
+
+            $("div").focusin(function () {
+                $(this).css("background-color", "orange"); // 여기서 $("div") 함수는 모든 <div> 요소 즉, <div id="div1">, <div id="div2"> 요소가 포함되어 있는 확장집합을 반환한다. 하지만 여기서 사용된 this 키워드는 확장집합에 포함되어 있는 <div> 요소 중에 focusin 이벤트가 발생한 <div> 요소를 가리킨다. 예를 들어 만약 <div id="div1"> 요소에서 focusin 이벤트가 발생했다면 이때 this 키워드는 <div id="div1"> 요소를 가리킨다.
+            });
+            $("div").focusout(function () {
+                $(this).css("background-color", "white");
+            });
+
+            $("#text4").change(function () {
+                alert("내용이 변경되었습니다.");
+            });
+            $("#select1").change(function () {
+                alert("항목이 변경되었습니다.");
+            });
+
+            $("#text5").select(function () {
+                alert("내용이 선택되었습니다.");
+            });
+
+            $("form").submit(function () {
+                alert("정보가 submit(전송) 되었습니다.");
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="text1" /><span id="span1"></span><br />
+        <input type="button" id="button1" value="포커스 설정" />
+
+        <br /><br />
+
+        <div id="div1" style="border: 1px solid black; padding: 10px;">
+            div1
+            <input type="text" id="text2" />
+        </div>
+
+        <br />
+
+        <div id="div2" style="border: 1px solid black; padding: 10px;">
+            div2
+            <input type="text" id="text3" />
+        </div>
+
+        <p>
+            내용을 입력해보세요. <input type="text" id="text4" />
+            <br />
+            다른 항목을 선택해보세요.
+            <select id="select1">
+                <option>item1</option>
+                <option>item2</option>
+                <option>item3</option>
+            </select>
+        </p>
+
+        <p>
+            내용을 입력한 후 내용을 마우스로 드래그하여 선택(select)해보세요.
+            <input type="text" id="text5" />
+        </p>
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    </form>
+</body>
+</html>

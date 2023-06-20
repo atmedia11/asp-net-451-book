@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("p:nth-child(2)").css("background-color", "yellow");
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <p>p 요소(body 요소 하위의 자식 요소들 중 첫 번째 자식 요소)</p>
+    <div style="border: 1px solid">
+        <p>p 요소(div 요소 하위의 자식 요소들 중 첫 번째 자식 요소)</p>
+        <p>p 요소(div 요소 하위의 자식 요소들 중 두 번째 자식 요소)</p>
+    </div>
+    <br />
+    <div style="border: 1px solid">
+        <span>span 요소(div 요소 하위의 자식 요소들 중 첫 번째 자식 요소)</span>
+        <p>p 요소(div 요소 하위의 자식 요소들 중 두 번째 자식 요소)</p>
+        <p>p 요소(div 요소 하위의 자식 요소들 중 세 번째 자식 요소)</p>
+    </div>
+    <p>p 요소(body 요소 하위의 자식 요소들 중 마지막 자식 요소)</p> <!-- 이 <p> 요소는 <body> 요소 하위의 자식 요소들 중 다섯 번째(인덱스 4) 요소이다. 왜냐하면 인덱스 0:<p>, 1:<div>, 2:<br />, 3:<div>, 4:<p>이기 때문이다. 예를 들어 $("p:nth-child(5)") 구문은 다섯 번째(인덱스 4) 요소인 가장 마지막에 있는 <p> 요소를 지칭한다. -->
+</body>
+</html>

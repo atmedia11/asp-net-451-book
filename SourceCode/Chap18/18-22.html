@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        var count1 = 0, count2 = 0;
+
+        $(document).ready(function () {
+            $("#p1").click(function () {
+                alert("클릭되었습니다.");
+            });
+
+            $("#p2").dblclick(function () {
+                alert("더블 클릭되었습니다.");
+            });
+
+            $("#p3").mouseenter(function () {
+                $("#p3").css("background-color", "yellow");
+            });
+
+            $("#p3").mouseleave(function () {
+                $("#p3").css("background-color", "orange");
+            });
+
+            $("#p4").hover(
+                function () { // mouseenter
+                    $("#p4").css("background-color", "yellow");
+                },
+                function () { // mouseleave
+                    $("#p4").css("background-color", "orange");
+                }
+            );
+
+            $("#div1").mouseover(function () {
+                $("#header1 span").text(++count1);
+            });
+
+            $("#div2").mouseenter(function () {
+                $("#header2 span").text(++count2);
+            });
+
+            $("#p5").mousemove(function (e) { // 인수로 전달된 function 리터럴의 매개변수 e는 '이벤트 객체(event object)'로서 마우스 포인터의 위치 정보를 담고 있으며 이 이벤트 객체의 pageX, pageY 속성을 사용하면 마우스 포인터의 X, Y 좌표를 참조할 수 있다.
+                $("#p5 span").text("(pageX, pageY) (" + e.pageX + ", " + e.pageY + ")");
+            });
+
+            $("#button1").mousedown(function () {
+                $("#span1").text("mousedown 이벤트 발생!!!");
+            });
+
+            $("#button1").mouseup(function () {
+                $("#span1").text("mouseup 이벤트 발생!!!");
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <p id="p1">여기를 클릭하세요.</p>
+    <p id="p2">여기를 더블 클릭하세요.</p>
+    <p id="p3">마우스 포인터를 이 요소 위로 올려보세요.</p>
+    <p id="p4">마우스 포인터를 이 요소 위로 올려보세요.</p>
+
+    <div id="div1" style="background-color: silver; width: 200px; padding: 20px; margin-right: 20px; float: left;">
+        <h3 id="header1" style="background-color: white; height: 60px;">mouseover 이벤트 발생 횟수 : <span></span></h3>
+    </div>
+    <div id="div2" style="background-color: silver; width: 200px; padding: 20px; float: right;">
+        <h3 id="header2" style="background-color: white; height: 60px;">mouseenter 이벤트 발생 횟수 : <span></span></h3>
+    </div>
+
+    <p style="clear: both;">&nbsp;</p>
+
+    <p id="p5" style="border: 1px solid black; width: 200px; height: 150px;">
+        <span></span>
+    </p>
+
+    <input type="button" id="button1" value="클릭" />
+    <span id="span1"></span>
+</body>
+</html>

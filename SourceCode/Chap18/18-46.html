@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+    /* <![CDATA[ */
+        .highlight {
+            text-decoration: underline;
+        }
+    /* ]]> */
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script src="Scripts/jquery.makeItRed-1.0.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                $("p").makeItRed().addClass("highlight"); // makeItRed() 메서드는 필자가 임의로 작성한 Scripts/jquery.makeItRed-1.0.js 파일에 정의되어 있는 플러그인이다.
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <p>첫 번째 단락.</p>
+    <p>두 번째 단락.</p>
+    <input type="button" value="스타일 적용" id="button1" />
+</body>
+</html>

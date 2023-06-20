@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+    //<![CDATA[
+        function func1() {
+            a = 10;
+            var b = 20;
+            document.write((a + b) + "<br />");
+        }
+
+        function func2() {
+            document.write(a);  // func1() 함수 안에 있는 변수 a는 선언 시 var 키워드를 사용하지 않았으므로 전역 변수로 선언된다. 
+                                //그러므로 func1() 함수 밖에서도 이렇게 사용될 수 있다.
+            //document.write(b);   // 반면에 func1() 함수 안에 있는 변수 b는 선언 시 var 키워드를 사용했으므로 지역 변수로 선언된다.
+                                    // 그러므로 변수 b는 func1() 함수 안에서만 사용될 수 있고 여기서와 같이 func2() 함수 안에서 사용을 하게되면 
+                                    // 정의되지 않은 변수 b로 인해 오류가 발생한다.
+        } 
+    //]]>
+    </script>
+</head>
+<body>
+    <script>
+    //<![CDATA[
+        func1();
+        func2();
+    //]]>
+    </script>
+</body>
+</html>

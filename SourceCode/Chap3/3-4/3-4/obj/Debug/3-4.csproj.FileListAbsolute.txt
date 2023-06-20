@@ -1,0 +1,5 @@
+C:\SourceCode\Chap3\3-4\3-4\bin\Debug\3-4.exe.config
+C:\SourceCode\Chap3\3-4\3-4\bin\Debug\3-4.exe
+C:\SourceCode\Chap3\3-4\3-4\bin\Debug\3-4.pdb
+C:\SourceCode\Chap3\3-4\3-4\obj\Debug\3-4.exe
+C:\SourceCode\Chap3\3-4\3-4\obj\Debug\3-4.pdb

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+    /* <![CDATA[ */
+        body div, p, span {
+            display: block;
+            border: 2px solid silver;
+            color: gray;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .selected {
+            color: red;
+            border: 2px solid red;
+        }
+    /* ]]> */
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnChildren").click(function () {
+                $("#div1").children().addClass("selected");
+            });
+
+            $("#btnFind").click(function () {
+                $("#div2").find("p").addClass("selected");
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <div id="div1">
+        div1 (선택된 요소)
+        <div>
+            div (child)
+            <p>
+                p (grandchild)
+                <span>span (great-grandchild)</span>
+            </p>
+        </div>
+        <div>
+            div (child)
+            <p>
+                p (grandchild)
+                <span>span (great-grandchild)</span>
+            </p>
+        </div>
+    </div>
+    <input type="button" id="btnChildren" value="$('#div1').children()" />
+
+    <br /><br />
+
+    <div id="div2">
+        div2 (선택된 요소)
+        <div>
+            div (child)
+            <p>
+                p (grandchild)
+                <span>span (great-grandchild)</span>
+            </p>
+        </div>
+        <div>
+            div (child)
+            <p>
+                p (grandchild)
+                <span>span (great-grandchild)</span>
+            </p>
+        </div>
+    </div>
+    <input type="button" id="btnFind" value="$('#div2').find('p')" />
+</body>
+</html>

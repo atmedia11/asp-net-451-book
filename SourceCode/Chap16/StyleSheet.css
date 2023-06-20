@@ -1,0 +1,48 @@
+﻿body {
+    font-family: 굴림, verdana, sans-serif;
+    font-size: 14px;    
+}
+
+#container {
+    margin: 0px auto;
+    min-width: 400px;
+	max-width: 780px;
+    border: 1px solid gray;
+    line-height: 150%;
+}
+
+#header {
+    padding: 10px;
+    color: white;
+    background-color: Silver;
+}        
+
+#left {
+    float: left;
+    width: 180px;
+    margin: 0;
+    padding: 10px;        
+}
+
+#breadcrumbs {
+    margin-left: 210px;
+    border-left: 1px solid gray;            
+    background-color: Menu;
+    padding: 10px;
+    text-align: right;
+}
+
+#content {
+    margin-left: 210px;
+    border-left: 1px solid gray;
+    padding: 10px;
+    min-height: 120px;
+}
+
+#footer {
+    padding: 10px;
+    color: white;
+    background-color: Silver;
+    text-align: center;
+    clear: left;
+}

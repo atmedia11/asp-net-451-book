@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnSlideUp").click(function () {
+                $("p").slideUp();
+            });
+
+            $("#btnSlideDown").click(function () {
+                $("p").slideDown();
+            });
+
+            $("#btnSlideToggle").click(function () {
+                $("p").slideToggle();
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <p>이것은 테스트 단락입니다.</p>
+    <input type="button" id="btnSlideUp" value="slideUp()" />
+    <input type="button" id="btnSlideDown" value="slideDown()" />
+    <input type="button" id="btnSlideToggle" value="slideToggle()" />
+</body>
+</html>

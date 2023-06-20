@@ -1,0 +1,5 @@
+C:\SourceCode\Chap3\3-22\3-22\bin\Debug\3-22.exe.config
+C:\SourceCode\Chap3\3-22\3-22\bin\Debug\3-22.exe
+C:\SourceCode\Chap3\3-22\3-22\bin\Debug\3-22.pdb
+C:\SourceCode\Chap3\3-22\3-22\obj\Debug\3-22.exe
+C:\SourceCode\Chap3\3-22\3-22\obj\Debug\3-22.pdb

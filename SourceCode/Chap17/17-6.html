@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+    //<![CDATA[
+        function validateInput() {
+            var userID = document.getElementById("txtUserID");
+            var password = document.getElementById("txtPassword");
+
+            if (userID.value.trim() == "") {
+                alert("사용자 ID를 입력하세요.");
+                userID.focus();
+                return false;
+            }
+            if (password.value.trim() == "") {
+                alert("암호를 입력하세요.");
+                password.focus();
+                return false;
+            }
+
+            return true;
+        }
+    //]]>
+    </script>
+</head>
+<body>
+    <form action="">
+        사용자 ID: <input type="text" id="txtUserID" /><br />
+        암호: <input type="password" id="txtPassword" /><br />
+        <input type="submit" value="확인" onclick="return validateInput()" />
+    </form>
+</body>
+</html>

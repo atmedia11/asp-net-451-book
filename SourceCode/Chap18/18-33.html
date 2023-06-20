@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+    /* <![CDATA[ */
+        body div, p, span {
+            display: block;
+            border: 2px solid silver;
+            color: gray;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .selected {
+            color: red;
+            border: 2px solid red;
+        }
+    /* ]]> */
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnParent").click(function () {
+                $("#div1 span").parent().addClass("selected"); // addClass() 메서드는 선택된 요소에 매개변수로 지정한 클래스를 추가하는 메서드로서 뒤에서 다시 다룬다.
+            });
+
+            $("#btnParents").click(function () {
+                $("#div2 span").parents("div").addClass("selected");
+            });
+
+            $("#btnParentsUntil").click(function () {
+                $("#div3 span").parentsUntil("body").addClass("selected");
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <b>body (great-great-grandparent)</b>
+    <div id="div1">
+        div (great-grandparent)
+        <div>
+            div (grandparent)
+            <p>
+                p (direct parent)
+                <span>span (선택된 요소)</span>
+            </p>
+        </div>
+    </div>
+    <input type="button" id="btnParent" value="$('span').parent()" />
+
+    <br /><br />
+
+    <b>body (great-great-grandparent)</b>
+    <div id="div2">
+        div (great-grandparent)
+        <div>
+            div (grandparent)
+            <p>
+                p (direct parent)
+                <span>span (선택된 요소)</span>
+            </p>
+        </div>
+    </div>
+    <input type="button" id="btnParents" value="$('span').parents('div')" />
+
+    <br /><br />
+
+    <b>body (great-great-grandparent)</b>
+    <div id="div3">
+        div (great-grandparent)
+        <div>
+            div (grandparent)
+            <p>
+                p (direct parent)
+                <span>span (선택된 요소)</span>
+            </p>
+        </div>
+    </div>
+    <input type="button" id="btnParentsUntil" value="$('span').parentsUntil('body')" />
+</body>
+</html>

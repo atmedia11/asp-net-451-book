@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+    /* <![CDATA[ */
+        div, p, h2, h3, h4, span {
+            display: block;
+            border: 2px solid silver;
+            color: gray;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .selected {
+            color: red;
+            border: 2px solid red;
+        }
+    /* ]]> */
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnSiblings").click(function () {
+                $("#div1 h2").siblings().addClass("selected");
+            });
+
+            $("#btnNext").click(function () {
+                $("#div2 h2").next().addClass("selected");
+            });
+
+            $("#btnNextAll").click(function () {
+                $("#div3 h2").nextAll().addClass("selected");
+            });
+
+            $("#btnNextUntil").click(function () {
+                $("#div4 h2").nextUntil("span").addClass("selected");
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <div id="div1">
+        div1 (parent)
+        <p>p</p>
+        <h2>h2 (선택된 요소)</h2>
+        <h3>h3</h3>
+    </div>
+    <input type="button" id="btnSiblings" value="$('#div1 h2').siblings()" />
+
+    <br /><br />
+
+    <div id="div2">
+        div2 (parent)
+        <p>p</p>
+        <h2>h2 (선택된 요소)</h2>
+        <h3>h3</h3>
+    </div>
+    <input type="button" id="btnNext" value="$('#div2 h2').next()" />
+
+    <br /><br />
+
+    <div id="div3">
+        div3 (parent)
+        <p>p</p>
+        <h2>h2 (선택된 요소)</h2>
+        <h3>h3</h3>
+        <span>span</span>
+    </div>
+    <input type="button" id="btnNextAll" value="$('#div3 h2').nextAll()" />
+
+    <br /><br />
+
+    <div id="div4">
+        div4 (parent)
+        <p>p</p>
+        <h2>h2 (선택된 요소)</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <span>span</span>
+    </div>
+    <input type="button" id="btnNextUntil" value="$('#div4 h2').nextUntil('span')" />
+
+    <br /><br />
+
+    <p>
+        * 참고로 prev(), prevAll(), prevUntil() 메서드는 각각 next(), nextAll(), nextUntil() 메서드와 정확히 반대로 동작하는 메서드이므로 굳이 예제에 포함시키지 않았다.
+    </p>
+</body>
+</html>

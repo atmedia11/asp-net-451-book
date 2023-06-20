@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+    //<![CDATA[
+        function changeImage() {
+            var myImage = document.getElementById("img1");
+            myImage.src = "Images/banner2.gif";
+            myImage.alt = "banner2";
+        }
+
+        function restoreImage() {
+            var myImage = document.getElementById("img1");
+            myImage.src = "Images/banner1.gif";
+            myImage.alt = "banner1";
+        }
+    //]]>
+    </script>
+</head>
+<body>
+    <img id="img1" src="Images/banner1.gif" alt="banner1" onmouseover="changeImage()" onmouseout="restoreImage()" />
+</body>
+</html>

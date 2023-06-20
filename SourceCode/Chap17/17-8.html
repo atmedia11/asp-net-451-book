@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <h3>산술 연산자</h3>
+
+    <script>
+    //<![CDATA[
+        //특정 값이 + 연산자를 통해 문자열과 연결되면 해당 값은 문자열로 자동 변환된다.
+        var x = 1 + 1; // 결과 2
+        var y = 1 + "1"; // 결과 "11"
+        document.write("x = " + x + ", y = " + y);
+        document.write("<br /><br />");
+
+        var a = 20, b = 10, c = 0;
+        document.write("a = " + a + ", b = " + b + "<br />");
+
+        c = a + b; // 더하기
+        document.write("a + b = " + c + "<br />");
+        c = a - b; // 빼기
+        document.write("a - b = " + c + "<br />");
+        c = a * b; // 곱하기
+        document.write("a * b = " + c + "<br />");
+        c = a / b; // 나누기
+        document.write("a / b = " + c + "<br />");
+        c = b % 3; // 나머지
+        document.write("b % 3 = " + c + "<br />");
+
+        c = ++a; // 증가 연산자 전위 연산
+        document.write("c = ++a 전위 연산 후 c = " + c + ", a = " + a + "<br />");
+        a = 20; // a를 20으로 초기화
+        c = a++; // 증가 연산자 후위 연산
+        document.write("c = a++ 후위 연산 후 c = " + c + ", a = " + a + "<br />");
+
+        a = 20; // a를 20으로 초기화 
+        c = --a; // 감소 연산자 전위 연산
+        document.write("c = --a 전위 연산 후 c = " + c + ", a = " + a + "<br />");
+        a = 20; // a를 20으로 초기화
+        c = a--; // 감소 연산자 후위 연산
+        document.write("c = a-- 후위 연산 후 c = " + c + ", a = " + a + "<br />");
+    //]]>
+    </script>
+</body>
+</html>

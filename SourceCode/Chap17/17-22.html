@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+    //<![CDATA[
+        function changeAttribute() {
+            document.getElementById("img1").src = "Images/banner2.gif";
+            document.getElementById("a1").href = "http://www.daum.net";
+            document.getElementById("a1").innerHTML = "다음";
+        }
+    //]]>
+    </script>
+    <img id="img1" src="Images/banner1.gif" alt="banner1" /><br />
+    <a id="a1" href="http://www.microsoft.com">마이크로소프트</a><br />
+    <input type="button" value="OK" onclick="changeAttribute()" />
+</body>
+</html>

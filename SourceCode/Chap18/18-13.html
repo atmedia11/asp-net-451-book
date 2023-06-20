@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("p:nth-last-of-type(2)").css("background-color", "yellow");
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <p>p 요소(body 요소 하위의 자식 p 요소들 중 뒤에서 두 번째 자식 p 요소)</p>
+    <div style="border: 1px solid">
+        <p>p 요소(div 요소 하위의 자식 p 요소들 중 뒤에서 두 번째 자식 p 요소)</p>
+        <p>p 요소(div 요소 하위의 자식 p 요소들 중 뒤에서 첫 번째 자식 p 요소)</p>
+    </div>
+    <br />
+    <div style="border: 1px solid">
+        <span>span 요소(div 요소 하위의 자식 span 요소들 중 뒤에서 두 번째 자식 span 요소)</span>
+        <p>p 요소(div 요소 하위의 자식 p 요소들 중 뒤에서 두 번째 자식 p 요소)</p>
+        <p>p 요소(div 요소 하위의 자식 p 요소들 중 뒤에서 첫 번째 자식 p 요소)</p>
+        <span>span 요소(div 요소 하위의 자식 span 요소들 중 뒤에서 첫 번째 자식 span 요소)</span>
+    </div>
+    <p>p 요소(body 요소 하위의 자식 p 요소들 중 뒤에서 첫 번째 자식 p 요소)</p>
+</body>
+</html>

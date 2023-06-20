@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnRequest").click(function () {
+                $.post(
+                    "18-44-2.aspx",
+                    {
+                        userID: $("#userID").val(),
+                        userName: $("#userName").val(),
+                        creditCard: $("#creditCard").val()
+                    }, // 서버로 전송될 데이터는 이와 같이 객체 리터럴로 작성할 수도 있고, 또는 "userID=" + $("#userID").val() + "&userName=" + $("#userName").val() + "&creditCard=" + $("#creditCard").val() 구문과 같이 쿼리 문자열로도 작성할 수 있다.
+                    function (responseData) {
+                        $("#lblResult").html(responseData);
+                    }
+                );
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <h3>$.post() 메서드 예제</h3>
+
+    사용자 ID : <input type="text" id="userID" value="aaaa" /><br />
+    사용자 이름 : <input type="text" id="userName" value="hong" /><br />
+    신용카드 번호 : <input type="text" id="creditCard" value="123-456" /><br />
+    <input type="button" id="btnRequest" value="전송" />
+    <br /><br />
+    <span id="lblResult"></span>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <h3>변수와 데이터 형식</h3>
+
+    <script>
+    //<![CDATA[
+        var a = 10, b = 10.123, c = "Hello world!", d = true; // 이처럼 변수는 한 구문에서 여러 개를 연달아 선언할 수도 있다.
+        b = '테스트'; // 변수 b는 Number 형식이었지만 문자열을 대입하여 String 형식으로 만들었다. 이처럼 변수는 대입하는 값에 따라 데이터 형식이 가변적으로 변한다.
+
+        document.write(a + "<br />");
+        document.write(b + "<br />");
+        document.write(c + "<br />");
+        document.write(d + "<br />");
+
+        // 아래는 변수 명명 규칙에 어긋나는 변수들의 예이다.
+        // var 123a = 100;      // 변수는 문자나 밑줄(_) 또는 달러 기호($)로 시작해야 한다.
+        // var xy-z = 200;      // 변수 이름에는 특수 문자(!, *, ?, - 등등)를 사용할 수 없다.
+        // var function = 300;  // 키워드를 변수 이름으로 사용할 수 없다.
+    //]]>
+    </script>
+</body>
+</html>

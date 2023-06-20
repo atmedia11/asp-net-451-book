@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+    //<![CDATA[
+        function changeStyle() {
+            var para1 = document.getElementById("p1");
+            para1.style.color = "blue";
+            para1.style.fontStyle = "italic";
+            document.getElementById("p2").style.display = "none";
+
+            //p1.style.color = "blue";
+            //p1.style.fontStyle = "italic";
+            //p2.style.display = "none";
+        }
+    //]]>
+    </script>
+    <p id="p1">Hello world!</p>
+    <p id="p2">Hello JavaScript!</p>
+    <input type="button" value="OK" onclick="changeStyle()" />
+</body>
+</html>

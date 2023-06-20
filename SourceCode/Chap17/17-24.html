@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+    //<![CDATA[
+        function checkCookies() {
+            if (navigator.cookieEnabled == true) {
+                alert("이 웹 브라우저는 쿠키를 사용하도록 설정하고 있습니다.");
+            }
+            else {
+                alert("이 웹 브라우저는 쿠키를 사용하지 않도록 설정하고 있습니다.");
+            }
+        }
+
+        function changeContents(obj) {
+            obj.innerHTML = "Hello JavaScript!";
+        }
+
+        function mDown(obj) {
+            obj.style.backgroundColor = "Silver";
+            obj.innerHTML = "클릭한 버튼을 다시 놓으세요.";
+        }
+
+        function mUp(obj) {
+            obj.style.backgroundColor = "Aqua";
+            obj.innerHTML = "클릭하세요.";
+        }
+
+        function changeBackgroundColor(obj) {
+            obj.style.backgroundColor = "Yellow";
+        }
+
+        function restoreBackgroundColor(obj) {
+            obj.style.backgroundColor = "White";
+        }
+
+        function upperCase(obj) {
+            obj.value = obj.value.toUpperCase();
+        }
+
+        function keyDown() {
+            document.getElementById("span1").innerHTML = "keyDown 이벤트 발생.";
+        }
+
+        function keyUp() {
+            document.getElementById("span1").innerHTML = "keyUp 이벤트 발생.";
+        }
+
+        function changeOnClickEventAttribute() {
+            document.getElementById("button1").onclick = function () { alert("안녕하세요."); }
+            alert("button1의 onclick 이벤트 특성이 변경되었습니다.\n\nbutton1을 다시 클릭해 보세요.");
+        }
+    //]]>
+    </script>
+</head>
+<body onload="checkCookies()">
+    <p onclick="changeContents(this)">Hello world!</p>
+
+    <img src="Images/banner1.gif" alt="banner1" onmouseover="this.src='Images/banner2.gif'" onmouseout="this.src='Images/banner1.gif'" />
+
+    <div style="width: 120px; height: 90px; background-color: Aqua;" onmousedown="mDown(this)" onmouseup="mUp(this)">클릭하세요.</div>
+
+    <input type="text" id="text1" onfocus="changeBackgroundColor(this)" onblur="restoreBackgroundColor(this)" onchange="upperCase(this)" />
+
+    <input type="text" id="text2" onkeydown="keyDown()" onkeyup="keyUp()" /><span id="span1"></span><br />
+
+    <input type="button" id="button1" value="button1" onclick="alert('button1을 클릭했습니다.')" /><br />
+    <input type="button" id="button2" value="button2" onclick="document.getElementById('button1').click()" /><br />
+    <input type="button" id="button3" value="button3" onclick="changeOnClickEventAttribute()" />
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+    /* <![CDATA[ */
+        p {
+            height: 50px;
+            padding: 10px;
+            background-color: Orange;
+        }
+    /* ]]> */
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnHide1").click(function () {
+                $("p").hide();
+            });
+
+            $("#btnHide2").click(function () {
+                $("p").hide("slow"); // hide(speed)
+            });
+
+            $("#btnHide3").click(function () {
+                $("p").hide(3000, "linear"); // hide(speed, easing)
+            });
+
+            $("#btnHide4").click(function () {
+                $("p").hide(function () {
+                    alert("숨김 완료!!!"); // hide(callback)
+                });
+            });
+
+            $("#btnHide5").click(function () {
+                $("p").hide( // hide(speed, easing, callback)
+                    3000,
+                    "swing",
+                    function () {
+                        alert("숨김 완료!!!");
+                    }
+                );
+            });
+
+            $("#btnShow").click(function () {
+                $("p").show();
+            });
+
+            $("#btnToggle").click(function () {
+                $("p").toggle();
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" id="btnHide1" value="hide()" />
+        <input type="button" id="btnHide2" value="hide(speed)" />
+        <input type="button" id="btnHide3" value="hide(speed, easing)" />
+        <input type="button" id="btnHide4" value="hide(callback)" />
+        <input type="button" id="btnHide5" value="hide(speed, easing, callback)" />
+        <br />
+        <input type="button" id="btnShow" value="show()" />
+        <br />
+        <input type="button" id="btnToggle" value="toggle()" />
+
+        <p>이것은 테스트 단락입니다.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,556 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h3>Window 객체</h3>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="2">Window 객체의 주요 속성 및 메서드</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>속성</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>document</td>
+                <td>Document 객체를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>history</td>
+                <td>History 객체를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>location</td>
+                <td>Location 객체를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>navigator</td>
+                <td>Navigator 객체를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>screen</td>
+                <td>Screen 객체를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>opener</td>
+                <td>현재의 Window를 열어준(open해준) 부모 Window 객체를 참조한다.</td>
+            </tr>
+            <tr>
+                <th>메서드</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>alert()</td>
+                <td>알림창을 띄운다.</td>
+            </tr>
+            <tr>
+                <td>blur()</td>
+                <td>Window가 포커스를 잃도록 설정한다.</td>
+            </tr>
+            <tr>
+                <td>clearInterval()</td>
+                <td>setInterval() 메서드에 의해 시작된 코드의 반복 실행을 멈춘다.</td>
+            </tr>
+            <tr>
+                <td>clearTimeout()</td>
+                <td>setTimeout() 메서드에 의해 연기된 코드의 실행을 취소한다.</td>
+            </tr>
+            <tr>
+                <td>close()</td>
+                <td>Window를 닫는다.</td>
+            </tr>
+            <tr>
+                <td>confirm()</td>
+                <td>확인창을 띄운다. 확인창은 메시지, &lt;확인&gt; 버튼 및 &lt;취소&gt; 버튼으로 이루어져 있다.</td>
+            </tr>
+            <tr>
+                <td>focus()</td>
+                <td>Window가 포커스를 갖도록 설정한다.</td>
+            </tr>
+            <tr>
+                <td>moveBy()</td>
+                <td>Window를 현재의 위치에서 지정된 위치만큼 이동시킨다(상대적 이동).</td>
+            </tr>
+            <tr>
+                <td>moveTo()</td>
+                <td>Window를 지정된 위치로 이동시킨다(절대적 이동).</td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top; padding-top: 5px;">open()</td>
+                <td>
+                    새로운 Window를 연 후에 새로 열린 Window 객체를 반환한다.<br /> 사용법은 window.open(URL, name, specs, replace)와 같은데 각 매개변수에 대한 자세한 설명은 아래의 표를 참고하자.<br /> 참고로 open() 메서드에서 사용되는 모든 매개변수(URL, name, specs, replace)는 생략이 가능하다.
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <th>매개변수</th>
+                                <th>셜명</th>
+                            </tr>
+                            <tr>
+                                <td>URL</td>
+                                <td>열려고 하는 페이지의 URL을 지정한다. 만약 URL을 지정하지 않으면 about:blank 페이지가 열린다.</td>
+                            </tr>
+                            <tr>
+                                <td>name</td>
+                                <td>
+                                    target 특성을 지정하거나 Window의 이름을 지정한다. 지정 가능한 값들을 정리하면 아래와 같다.
+                                    <ul>
+                                        <li>_blank : 새로운 Window를 열고 URL을 로드한다.[기본값]</li>
+                                        <li>_parent : 부모 프레임에 URL을 로드한다.</li>
+                                        <li>_self : 현재 페이지에 URL을 로드한다.</li>
+                                        <li>_top : URL을 로드할 수 있는 프레임셋에 URL을 로드한다.</li>
+                                        <li><i>name</i> : 임의로 지정하는 Window의 이름이다. 만약 여기서 지정한 이름(name)과 동일한 이름을 가진 Window가 이미 열려 있으면<br /> 열려 있는 해당 Window에 URL을 로드하고, 없으면 여기서 지정한 이름(name)을 가지는 새로운 Window를 열고 URL을 로드한다.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>specs</td>
+                                <td>열려질 Window의 사양(specs)을 지정한다. 사양에서 지정 가능한 항목들은 아래와 같다.
+                                    <table border="1">
+                                        <tbody>
+                                            <tr>
+                                                <th>항목</th>
+                                                <th>지정 가능한 값</th>
+                                                <th>설명</th>
+                                            </tr>
+                                            <tr>
+                                                <td>channelmode</td>
+                                                <td>yes, no, 1, 0. 참고로 yes는 1과 같고 no는 0과 같다.</td>
+                                                <td>극장 모드로 보여줄 것인지의 여부를 지정한다. IE에서만 사용가능. [기본값:no]</td>
+                                            </tr>
+                                            <tr>
+                                                <td>directories</td>
+                                                <td>yes, no, 1, 0</td>
+                                                <td>디렉터리 버튼의 추가 여부를 지정한다. IE에서만 사용가능. [기본값:yes]</td>
+                                            </tr>
+                                            <tr>
+                                                <td>fullscreen</td>
+                                                <td>yes, no, 1, 0</td>
+                                                <td>전체 화면으로 보여줄 것인지의 여부를 지정한다. IE에서만 사용가능. [기본값:no]</td>
+                                            </tr>
+                                            <tr>
+                                                <td>height</td>
+                                                <td>픽셀</td>
+                                                <td>Window의 높이를 지정한다. 최소값은 100이다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>left</td>
+                                                <td>픽셀</td>
+                                                <td>Window의 좌측 위치(x 좌표)를 지정한다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>location</td>
+                                                <td>yes, no, 1, 0</td>
+                                                <td>주소창의 보임 여부를 지정한다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>menubar</td>
+                                                <td>yes, no, 1, 0</td>
+                                                <td>메뉴바의 보임 여부를 지정한다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>resizable</td>
+                                                <td>yes, no, 1, 0</td>
+                                                <td>Window의 크기 조절 가능 여부를 지정한다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>scrollbars</td>
+                                                <td>yes, no, 1, 0</td>
+                                                <td>스크롤바의 보임 여부를 지정한다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>status</td>
+                                                <td>yes, no, 1, 0</td>
+                                                <td>상태 표시줄의 보임 여부를 지정한다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>titlebar</td>
+                                                <td>yes, no, 1, 0</td>
+                                                <td>제목 표시줄의 보임 여부를 지정한다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>toolbar</td>
+                                                <td>yes, no, 1, 0</td>
+                                                <td>도구모음의 보임 여부를 지정한다. </td>
+                                            </tr>
+                                            <tr>
+                                                <td>top</td>
+                                                <td>픽셀</td>
+                                                <td>Window의 위쪽 위치(y 좌표)를 지정한다. IE에서만 사용가능.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>width</td>
+                                                <td>픽셀</td>
+                                                <td>Window의 너비를 지정한다. 최소값은 100이다.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>replace</td>
+                                <td>
+                                    지정된 URL의 히스토리(방문 기록) 정보를 히스토리 리스트에 새로 추가할 것인지<br /> 아니면 현재의 히스토리 정보에 덮어 쓸 것인지(replace할 것인지)를 지정한다. 지정 가능한 값은 아래와 같다.
+                                    <ul>
+                                        <li>true : 지정된 URL의 정보를 현재의 히스토리 정보에 덮어쓴다.</li>
+                                        <li>false : 지정된 URL의 정보를 히스토리 리스트에 새로 추가한다.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>print()</td>
+                <td>Window에 있는 내용을 프린트한다.</td>
+            </tr>
+            <tr>
+                <td>prompt()</td>
+                <td>문자열을 입력 받을 수 있는 입력창을 띄운다.</td>
+            </tr>
+            <tr>
+                <td>setInterval()</td>
+                <td>지정된 코드를 지정된 시간(밀리초) 간격으로 반복 실행되도록 한다.</td>
+            </tr>
+            <tr>
+                <td>setTimeout()</td>
+                <td>지정된 코드를 지정된 시간(밀리초) 이후에 실행되도록 코드의 실행을 연기한다.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <script>
+    //<![CDATA[
+        function dispConfirm() {
+            var mySpan = window.document.getElementById("spanForConfirm"); // Document 객체의 getElementById() 메서드는 id 특성을 통해 특정 요소의 객체를 찾는 메서드이다. 여기서는id가 "spanForConfirm"인 요소를 찾고 있다. 참고로 getElementById() 메서드와 관련된 내용은 책에서 DOM을 설명할 때 다시 다룰 것이므로 지금은 그냥 이 예제에서 제시해주는 대로 사용하기 바란다.
+            var r = window.confirm("<확인> 또는 <취소> 버튼을 누르세요."); // confirm() 메서드는 <확인> 버튼 클릭 시 true를 반환하고 <취소> 버튼 클릭 시 false를 반환한다. 그리고 여기서 confirm() 앞에 붙은 window는 현재의 Window 객체를 반환하는 속성으로서 생략이 가능하다.
+            if (r == true) {
+                mySpan.innerHTML = "<확인> 버튼을 클릭했습니다."; // 특정 요소의 내용을 변경할 때에는 해당 요소 객체의 innerHTML 속성을 사용한다.
+            }
+            else {
+                mySpan.innerHTML = "<취소> 버튼을 클릭했습니다.";
+            }
+        }
+
+        function dispPrompt() {
+            var name = prompt("이름을 입력하세요.", "홍길동"); // prompt(message, default value). 참고로 window 속성은 현재의 Window 객체를 나타내는 속성이므로 생략할 수 있다. 즉, window.prompt() 대신 그냥 prompt()로 사용해도 된다.
+            document.getElementById("spanForPrompt").innerHTML = "안녕하세요, " + name + "님."; // 마찬가지로 window.document에서 window를 생략하고 간단히 document로 작성해도 된다.
+        }
+
+        var myWindow;
+        function winOpen() {
+            myWindow = window.open("17-20-2.html", "_blank", "toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, width=400, height=400"); // open(URL, name, specs, replace). open() 메서드는 새로운 Window를 연 후에 새로 열린 Window 객체를 반환한다. 참고로 사양(specs)을 지정할 때 사용되는 각각의 항목들은 콤마(,)로 구분된다.
+            myWindow.focus(); // 새로 열린 Window가 포커스를 갖도록 설정한다.
+        }
+
+        function winFocus() {
+            if (myWindow) { // if문의 ()안에 별다른 조건식 없이 단순히 myWindow 변수를 조건식으로 사용했는데 이렇게 하면 myWindow 변수가 null, undefined, 0, "", NaN이면 false를 반환하고 그 외의 값이면 true를 반환하게 된다. 예를 들어 위의 winOpen() 함수를 호출하지 않고 바로 winFocus() 함수를 호출하면 myWindow 변수가 선언만 되고 값이 할당되지 않아 undefined 값을 가지므로 이 if문의 ()안의 조건식은 false를 반환한다. 그러므로 이 if문은 myWindow의 존재여부(열려있는지의 여부)를 판별하는 구문이다.
+                myWindow.focus(); // myWindow가 포커스를 갖도록 설정한다.
+            }
+        }
+
+        function winBlur() {
+            if (myWindow) { // myWindow가 존재한다면(열려있다면)
+                myWindow.blur(); // myWindow가 포커스를 잃도록 설정한다.
+            }
+        }
+
+        var intervalID;
+        function getTheClockGoing() {
+            intervalID = window.setInterval(function () { clock(); }, 1000); // 1000 밀리초(millisecond)는 1초(second)이다. 그러므로 이 구문은 1초마다 clock() 메서드를 호출한다.
+            
+            // 참고로 window.setinterval() 메서드의 첫 번째 인수로 전달된 function () { } 구문은 'function 리터럴(function literal)'이다.
+            // function 리터럴은 기존의 함수와 그 모습이 흡사하지만 함수의 이름을 생략한 형태로서 함수를 하나의 값으로 표현한 것이다.
+            // function 리터럴은 여기에서와 같이 함수 자체를 다른 함수의 인수로 전달해야 할 때 유용하게 사용될 수 있다.
+            // 아래의 구문은 위의 구문을 풀어서 작성한 것이다.
+                        
+            // var myFunction = function () { clock(); }
+            // intervalID = window.setInterval(myFunction, 1000);
+
+            // 아래에 나오는 window.setTimeout() 메서드에서도 function 리터럴을 사용했으므로 참고하기 바란다.
+            // 그리고 '리터럴(literal)'의 개념은 책의 [예제 17-18] 설명 다음에 나오는
+            // '[알아두기] 리터럴(literal)이란?' 부분에서 이미 설명했으므로 역시 참고하기 바란다.
+        }
+
+        function clock() {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("spanForSetInterval").innerHTML = t;
+        }
+
+        var timeoutID;
+        function installTimeBomb() {
+            timeoutID = window.setTimeout(function () { timeBomb(); }, 5000);
+            document.getElementById("spanForSetTimeout").innerHTML = "5초 후에 폭탄이 폭발합니다.";
+        }
+
+        function timeBomb() {
+            document.getElementById("spanForSetTimeout").innerHTML = "폭탄이 폭발했습니다!!!";
+            timeoutID = null;
+        }
+
+        function deactivateBomb() {
+            if (timeoutID) {
+                window.clearTimeout(timeoutID)
+                document.getElementById("spanForSetTimeout").innerHTML = "폭탄이 해체되었습니다.";
+            }
+        }
+
+        function redirect() {
+            window.location.href = "17-20-3.html";
+        }
+    //]]>
+    </script>
+
+    <input type="button" value="alert() 메서드" onclick="alert('알림창입니다.')" /><br /> <!-- input 요소의 onclick은 해당 요소가 클릭되었을 때 실행될 스크립트를 지정하는 이벤트 특성이다. 참고로 이벤트에 대해서는 책에서 DOM을 설명할 때 다시 자세히 다룰 것이다. --> 
+    <input type="button" value="confirm() 메서드" onclick="dispConfirm()" /><span id="spanForConfirm"></span><br />
+    <input type="button" value="prompt() 메서드" onclick="dispPrompt()" /><span id="spanForPrompt"></span><br />
+    <input type="button" value="print() 메서드" onclick="print()" /><br />
+    <input type="button" value="open() 메서드" onclick="winOpen()" /><span id="spanForOpen"></span><br />
+    <input type="button" value="focus() 메서드" onclick="winFocus()" /><br />
+    <input type="button" value="blur() 메서드" onclick="winBlur()" /><br />
+    <input type="button" value="setInterval() 메서드" onclick="getTheClockGoing()" /><input type="button" value="clearInterval() 메서드" onclick="window.clearInterval(intervalID)" /><span id="spanForSetInterval"></span><br />
+    <input type="button" value="setTimeout() 메서드" onclick="installTimeBomb()" /><input type="button" value="clearTimeout() 메서드" onclick="deactivateBomb()" /><span id="spanForSetTimeout"></span><br />
+
+    <h3>History 객체</h3>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="2">History 객체의 주요 속성 및 메서드</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>속성</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>length</td>
+                <td>히스토리(방문 기록) 리스트에 있는 URL의 수를 반환한다.</td>
+            </tr>
+            <tr>
+                <th>메서드</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>back()</td>
+                <td>히스토리 리스트의 이전 URL로 이동한다.</td>
+            </tr>
+            <tr>
+                <td>forward()</td>
+                <td>히스토리 리스트의 다음 URL로 이동한다.</td>
+            </tr>
+            <tr>
+                <td>go()</td>
+                <td>히스토리 리스트의 특정 URL로 이동한다.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <a href="17-20-3.html">17-20-3.html 페이지로 이동</a><br />
+    <input type="button" value="history.forward()" onclick="window.history.forward()" /> &lt;-- 위의 '17-20-3.html 페이지로 이동' 링크를 누른 후 이 버튼을 누르세요.
+
+    <h3>Location 객체</h3>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="2">Location 객체의 주요 속성 및 메서드</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>속성</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>hash</td>
+                <td>URL의 anchor 부분을 반환한다.<br />예를 들어 URL이 http://localhost:27986/17-20-1.html#part1 이라면<br />해시 기호(#)를 포함한 #part1을 반환한다.</td>
+            </tr>
+            <tr>
+                <td>host</td>
+                <td>URL의 호스트명과 포트 번호를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>hostname</td>
+                <td>URL의 호스트명을 반환한다.</td>
+            </tr>
+            <tr>
+                <td>href</td>
+                <td>전체 URL을 반환한다.</td>
+            </tr>
+            <tr>
+                <td>pathname</td>
+                <td>URL의 웹 문서 경로를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>port</td>
+                <td>포트 번호를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>protocol</td>
+                <td>URL의 프로토콜을 반환한다.</td>
+            </tr>
+            <tr>
+                <td>search</td>
+                <td>URL의 쿼리 문자열(query string) 부분을 반환한다.<br />예를 들어 URL이 http://localhost:27986/17-20-1.html?userID=aaaa 라면<br />물음표(?)를 포함한 ?userID=aaaa를 반환한다.</td>
+            </tr>
+            <tr>
+                <th>메서드</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>assign()</td>
+                <td>새로운 웹 문서를 로드한다.</td>
+            </tr>
+            <tr>
+                <td>reload()</td>
+                <td>현재의 웹 문서를 다시 리로드(reload)한다.<br />reload() 메서드는 기본적으로 웹 브라우저 캐시에 있는 현재의 웹 문서를 다시 로드하는데<br />reload(true)와 같이 true를 인수로 전달하면 현재의 웹 문서를 웹 서버에서 다시 로드한다.</td>
+            </tr>
+            <tr>
+                <td>replace()</td>
+                <td>현재의 웹 문서를 새로운 웹 문서로 변경한다.<br />replace() 메서드와 assign() 메서드 모두 새로운 웹 문서를 로드한다는 점에서는 동일한 기능을 하지만<br />replace() 메서드는 새로운 웹 문서의 정보를 현재의 웹 문서 히스토리(방문 기록) 정보에 덮어쓰므로<br />다시 이전 웹 문서 즉, 현재의 웹 문서로 history.back()할 수 없다.<br />반면에 assign() 메서드는 새로운 웹 문서의 정보를 히스토리(방문 기록) 리스트에 새로 추가하므로<br />다시 이전 웹 문서 즉, 현재의 웹 문서로 history.back()할 수 있다.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <script>
+    //<![CDATA[
+        document.write("location.href = " + window.location.href + "<br />");
+        document.write("location.hash = " + window.location.hash + "<br />");
+        document.write("location.host = " + window.location.host + "<br />");
+        document.write("location.hostname = " + window.location.hostname + "<br />");
+        document.write("location.pathname = " + window.location.pathname + "<br />");
+        document.write("location.port = " + window.location.port + "<br />");
+        document.write("location.protocol = " + window.location.protocol + "<br />");
+        document.write("location.search = " + window.location.search + "<br />");
+    //]]>
+    </script>
+
+    <input type="button" value="location.assign('http://www.naver.com') 메서드" onclick="location.assign('http://www.naver.com')" /><br />
+    <input type="button" value="location.replace('http://www.naver.com') 메서드" onclick="location.replace('http://www.naver.com')" /><br />
+    <input type="button" value="location.reload() 메서드" onclick="location.reload()" /><br />
+    <input type="button" value="location.href='17-20-3.html'" onclick="location.href='17-20-3.html'" /><br /> <!-- Location 객체의 href 속성에 URL을 지정해도 해당 URL로 이동된다. -->
+    
+
+    <h3>Document 객체</h3>
+
+    Document 객체와 관련된 내용은 책에 있는 '04. HTML DOM' 절을 참고하기 바란다.
+
+    <h3>Screen 객체</h3>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="2">Screen 객체의 주요 속성</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>속성</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>availHeight</td>
+                <td>사용 가능한(available) 화면의 높이를 반환한다. 단, 작업 표시줄은 제외.</td>
+            </tr>
+            <tr>
+                <td>availWidth</td>
+                <td>사용 가능한(available) 화면의 너비를 반환한다. 단, 작업 표시줄은 제외.</td>
+            </tr>
+            <tr>
+                <td>colorDepth</td>
+                <td>사용 가능한 색상의 수를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>화면의 전체 높이를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>pixelDepth</td>
+                <td>화면의 한 픽셀당 비트 수를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>화면의 전체 너비를 반환한다.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <script>
+    //<![CDATA[
+        document.write("screen.width = " + window.screen.width + "<br />");
+        document.write("screen.height = " + window.screen.height + "<br />");
+        document.write("screen.availWidth = " + window.screen.availWidth + "<br />");
+        document.write("screen.availHeight = " + window.screen.availHeight + "<br />");
+        document.write("screen.colorDepth = " + window.screen.colorDepth + "<br />");
+        document.write("screen.pixelDepth = " + window.screen.pixelDepth);
+    //]]>
+    </script>
+
+    <h3>Navigator 객체</h3>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="2">Navigator 객체의 주요 속성</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>속성</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>appCodeName</td>
+                <td>웹 브라우저의 코드 이름을 반환한다.</td>
+            </tr>
+            <tr>
+                <td>appName</td>
+                <td>웹 브라우저의 이름을 반환한다.</td>
+            </tr>
+            <tr>
+                <td>appVersion</td>
+                <td>웹 브라우저의 버전 정보를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>cookieEnabled</td>
+                <td>웹 브라우저의 쿠키 사용 여부를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>onLine</td>
+                <td>웹 브라우저의 인터넷 연결(온라인) 여부를 반환한다.<br />인터넷에 연결되어 있다면 true를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>platform</td>
+                <td>웹 브라우저가 실행되고 있는 시스템의 환경 정보를 반환한다.</td>
+            </tr>
+             <tr>
+                <td>userAgent</td>
+                <td>user-agent 헤더의 값을 반환한다.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <script>
+    //<![CDATA[
+        document.write("navigator.appCodeName = " + window.navigator.appCodeName + "<br />");
+        document.write("navigator.appName = " + window.navigator.appName + "<br />");
+        document.write("navigator.appVersion = " + window.navigator.appVersion + "<br />");
+        document.write("navigator.cookieEnabled = " + window.navigator.cookieEnabled + "<br />");
+        document.write("navigator.onLine = " + window.navigator.onLine + "<br />");
+        document.write("navigator.platform = " + window.navigator.platform + "<br />");
+        document.write("navigator.userAgent = " + window.navigator.userAgent);
+    //]]>
+    </script>
+</body>
+</html>

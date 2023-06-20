@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#btnOK").click(function () {
+                var myFruit = $(":checkbox:checked").map(function () {
+                    return $(this).val();
+                })
+                .get()
+                .join();
+
+                alert(myFruit);
+            });
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <label for="chkApple">Apple</label>
+    <input type="checkbox" id="chkApple" value="Apple" />&nbsp;&nbsp;&nbsp;
+
+    <label for="chkBanana">Banana</label>
+    <input type="checkbox" id="chkBanana" value="Banana" />&nbsp;&nbsp;&nbsp;
+
+    <label for="chkOrange">Orange</label>
+    <input type="checkbox" id="chkOrange" value="Orange" />&nbsp;&nbsp;&nbsp;
+
+    <label for="chkMelon">Melon</label>
+    <input type="checkbox" id="chkMelon" value="Melon" />&nbsp;&nbsp;&nbsp;
+
+    <input type="button" id="btnOK" value="확인" />
+</body>
+</html>

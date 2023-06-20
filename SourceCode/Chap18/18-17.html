@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("#div1 > :input").css("background-color", "red");
+
+            $("#div2 > :text").css("background-color", "green");
+
+            $("#div3 > :password").css("background-color", "blue");
+            
+            $("#div4 > :radio").wrap("<span style='background-color: aqua'></span>"); // FireFox, Chrome 등의 경우에는 <input type="radio">, <input type="checkbox"> 요소에 background-color 속성이 적용되지 않으므로 jQuery의 wrap()메서드를 사용하여 <input type="radio">, <input type="checkbox"> 요소를 background-color가 지정되어 있는 <span> 요소로 감싸는 방법을 사용했다. wrap() 메서드는 선택된 확장집합을 매개변수로 명시한 요소(여기서는 <span style='background-color: aqua'></span> 요소)로 감싸는 메서드로서 '05. DOM' 절에서 다시 다룬다.
+
+            $("#div5 > :checkbox").wrap("<span style='background-color: orange'></span>");
+
+            $("#div6 > :submit").css("background-color", "olive");
+
+            $("#div7 > :reset").css("background-color", "purple");
+
+            $("#div8 > :button").css("background-color", "yellow");
+
+            $("#div9 > :image").css("border", "3px solid lime");
+
+            $("#div10 > :file").css("border", "3px solid fuchsia");
+
+            $("#div11 > :enabled").css("background-color", "red");
+
+            $("#div12 > :disabled").css("background-color", "aqua");
+
+            $("#div13 :selected").css("background-color", "orange");
+
+            $("#div14 > :checked").wrap("<span style='background-color: lime'></span>");
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <div id="div1">
+        div1
+        <input type="text" />
+        <input type="button" value="OK" />
+    </div>
+    <br />
+    <div id="div2">
+        div2
+        <input type="text" />
+        <input type="button" value="OK" />
+    </div>
+    <br />
+    <div id="div3">
+        div3
+        <input type="text" />
+        <input type="password" />
+    </div>
+    <br />
+    <div id="div4">
+        div4 <br />
+        Male: <input type="radio" name="sex" value="m" />
+        Female: <input type="radio" name="sex" value="f" />
+        <br />
+        item1: <input type="checkbox" name="item" value="item1" />
+        item2: <input type="checkbox" name="item" value="item2" />
+    </div>
+    <br />
+    <div id="div5">
+        div5 <br />
+        Male: <input type="radio" name="sex" value="m" />
+        Female: <input type="radio" name="sex" value="f" />
+        <br />
+        item1: <input type="checkbox" name="item" value="item1" />
+        item2: <input type="checkbox" name="item" value="item2" />
+    </div>
+    <br />
+    <div id="div6">
+        div6
+        <input type="button" value="OK" />
+        <input type="submit" value="Submit" />
+    </div>
+    <br />
+    <div id="div7">
+        div7
+        <input type="reset" value="Rest" />
+        <input type="submit" value="Submit" />
+    </div>
+    <br />
+    <div id="div8">
+        div8
+        <input type="reset" value="Rest" />
+        <input type="button" value="OK" />
+    </div>
+    <br />
+    <div id="div9">
+        div9 <br />
+        <input type="image" src="Images/banner1.gif" />
+        <img src="Images/banner1.gif" alt="banner1" />
+    </div>
+    <br />
+    <div id="div10">
+        div10
+        <input type="file" name="myfile" />
+    </div>
+    <br />
+    <div id="div11">
+        div11
+        <input type="text" value="enabled textbox" />
+        <input type="text" value="disabled textbox" disabled="disabled" />
+    </div>
+    <br />
+    <div id="div12">
+        div12
+        <input type="text" value="enabled textbox" />
+        <input type="text" value="disabled textbox" disabled="disabled" />
+    </div>
+    <br />
+    <div id="div13">
+        div13
+        <input type="text" />
+        <select>
+            <option>item1</option>
+            <option selected="selected">item2</option>
+            <option>item3</option>
+        </select>
+    </div>
+    <br />
+    <div id="div14">
+        div14
+        <br />
+        item1: <input type="checkbox" name="item" value="item1" /><br />
+        item2: <input type="checkbox" name="item" value="item2" checked="checked" /><br />
+        item3: <input type="checkbox" name="item" value="item3" />
+    </div>
+</body>
+</html>

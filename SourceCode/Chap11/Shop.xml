@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shop>
+  <Category title="가전">
+    <Item title="TV"></Item>
+    <Item title="에어콘"></Item>
+  </Category>
+  <Category title="의류">
+    <Item title="원피스"></Item>
+    <Item title="청바지"></Item>
+  </Category>
+  <Category title="컴퓨터">
+    <Item title="노트북"></Item>
+    <Item title="데스크톱"></Item>
+  </Category>
+</Shop>

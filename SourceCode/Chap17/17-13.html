@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <h3>if문</h3>
+
+    <script>
+    //<![CDATA[
+        var a = 10, b = 20;
+        document.write("a  = " + a + ", b = " + b + "<br />");
+
+        // if
+        if (a > b) {
+            document.write("a는 b보다 크다.<br />");
+        }
+
+        // if - else
+        if (a > b) {
+            document.write("a는 b보다 크다.<br />");
+        }
+        else {
+            document.write("a는 b보다 크지 않다.<br />");
+        }
+
+        // if - else if - else
+        if (a > b) {
+            document.write("a는 b보다 크다.<br />");
+            document.write(a + " &gt; " + b);
+        }
+        else if (a == b) {
+            document.write("a는 b와 같다.<br />");
+            document.write(a + " == " + b);
+        }
+        else {
+            document.write("a는 b보다 작다.<br />");
+            document.write(a + " &lt; " + b);
+        }
+    //]]>
+    </script>
+
+    <h3>switch문</h3>
+
+    <script>
+    //<![CDATA[
+        var grade = 4;
+
+        switch (grade) {
+            case 1:
+                document.write("님은 골드입니다.");
+                break;
+            case 2:
+                document.write("님은 루비입니다.");
+                break;
+            case 3:
+                document.write("님은 사파이어입니다. 이게 최선입니까?");
+                break;
+            case 4:
+                document.write("님은 에메랄드입니다.");
+                break;
+            case 5:
+                document.write("님은 다이아몬드입니다. 님은 좀 짱인 듯.");
+                break;
+            default:
+                document.write("존재하지 않는 등급입니다.");
+                break;
+        }
+    //]]>
+    </script>
+</body>
+</html>

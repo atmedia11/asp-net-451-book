@@ -1,0 +1,6 @@
+C:\SourceCode\Chap3\3-34\3-34\bin\Debug\3-34.exe.config
+C:\SourceCode\Chap3\3-34\3-34\bin\Debug\3-34.exe
+C:\SourceCode\Chap3\3-34\3-34\bin\Debug\3-34.pdb
+C:\SourceCode\Chap3\3-34\3-34\obj\Debug\3-34.exe
+C:\SourceCode\Chap3\3-34\3-34\obj\Debug\3-34.pdb
+C:\SourceCode\Chap3\3-34\3-34\obj\Debug\3-34.csprojResolveAssemblyReference.cache

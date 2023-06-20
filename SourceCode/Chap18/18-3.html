@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>
+    //<![CDATA[
+        $(document).ready(function () {
+            $("div > b").css("font-style", "italic");
+
+            $("div b").css("text-decoration", "underline");
+
+            $("div + p").css("background-color", "yellow");
+
+            $("div ~ b").css("background-color", "green");
+        });
+    //]]>
+    </script>
+</head>
+<body>
+    <div>
+        <b>첫 번째</b> 문장입니다.
+        <p>
+            <b>두 번째</b> 문장입니다.
+        </p>
+    </div>
+
+    <p>
+        세 번째 문장입니다.
+    </p>
+
+    <b>네 번째</b> 문장입니다.
+</body>
+</html>

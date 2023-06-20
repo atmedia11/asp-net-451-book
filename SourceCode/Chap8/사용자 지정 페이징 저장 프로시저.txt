@@ -1,0 +1,30 @@
+/********** usp_SelectMemberPaging **********/
+CREATE PROCEDURE usp_SelectMemberPaging
+	@StartRowIndex	INT
+,	@MaximumRows	INT
+AS
+BEGIN
+
+SET @StartRowIndex = @StartRowIndex + 1
+
+SELECT UserID, Password, Name, Phone
+FROM
+(
+	SELECT 	UserID, Password, Name, Phone,
+		ROW_NUMBER() OVER(ORDER BY UserID) AS RowNum
+	FROM Member
+) AS MemberList
+WHERE RowNum BETWEEN @StartRowIndex AND (@StartRowIndex + @MaximumRows) -1
+
+END
+
+
+/********** usp_SelectMemberCount **********/
+CREATE PROCEDURE usp_SelectMemberCount
+AS
+BEGIN
+
+SELECT COUNT(UserID)
+FROM Member
+
+END
